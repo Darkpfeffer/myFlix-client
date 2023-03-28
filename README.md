@@ -1,6 +1,6 @@
 ## myFlix Client-Side (Project requirement at CareerFoundry)
 
-The app is built using React framework.
+The app is built with React framework.
 
 ### Used Resources:
 
