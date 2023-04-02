@@ -2955,7 +2955,7 @@ $RefreshReg$(_c, "MyFlixApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"evb1z","./components/main-view/main-view":"4gflv"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./components/main-view/main-view":"4gflv","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"evb1z"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("a594d7d346cac17d");
 
@@ -27140,7 +27140,166 @@ module.exports = require("475fc563eb1668e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"lJZlQ":[function() {},{}],"evb1z":[function(require,module,exports) {
+},{}],"4gflv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f7a6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _movieCard = require("../movie-card/movie-card");
+var _s = $RefreshSig$();
+const MainView = ()=>{
+    _s();
+    const [movie, setMovie] = (0, _react.useState)([
+        {
+            _id: 1,
+            Title: "The Karate Kid",
+            Description: "Work causes a single mother to move to China with her young son; in his new home, the boy embraces kung fu, taught to him by a master.",
+            Genre: {
+                Name: "Martial Arts",
+                Description: "Martial arts films commonly include hand-to-hand combat along with other types of action, such as stuntwork, chases, and gunfights Sub-genres of martial arts films include kung fu films, wuxia, karate films, and martial arts action comedy films, while related genres include gun fu, jidaigeki and samurai films."
+            },
+            Director: {
+                Name: "Harald Zwart",
+                Bio: "He was born in Leiden, Netherlands, and his family moved to Norway where he grew up. He made his first film when he was 8 years and was active with Super8 and stop motion animation for years. He was accepted into the highly acclaimed Dutch Film Academy in Amsterdam, NL, where he spent 4 years specializing in Directing, Script and Editing. He met his wife and partner Veslemoey Ruud Zwart and they've worked together since. She started managing his deals and started the company Zwart Arbeid A/S",
+                Birthyear: "1965"
+            },
+            Release_date: "2010",
+            ImageURL: "https://images.moviesanywhere.com/92e403194d518b12a4c5a1e1ee0bb454/5b1c7797-5122-4ee1-98bb-b6ffbcc49ade.jpg"
+        },
+        {
+            _id: 2,
+            Title: "The Matrix",
+            Description: "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+            Genre: {
+                Name: "Science Fiction",
+                Description: "Science fiction is a genre of fiction in which the stories often tell about science and technology of the future. It is important to note that science fiction has a relationship with the principles of science—these stories involve partially true- partially fictitious laws or theories of science."
+            },
+            Director: {
+                Name: "The Wachowskis",
+                Bio: "They are American film and television directors, writers and producers. have worked as a writing and directing team through most of their careers. They made their directing debut in 1996 with Bound and achieved fame with their second film, The Matrix (1999).",
+                Birthyear: [
+                    "1965",
+                    "1967"
+                ]
+            },
+            Release_date: "1999",
+            ImageURL: "https://image.tmdb.org/t/p/original/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
+        },
+        {
+            _id: 3,
+            Title: "Prince of Persia: The Sands of Time",
+            Description: "A young fugitive prince and princess must stop a villain who unknowingly threatens to destroy the world with a special dagger that enables the magic sand inside to reverse time.",
+            Genre: {
+                Name: "Action",
+                Description: "Action films are built around a core set of characteristics: spectacular physical action; a narrative emphasis on fights, chases, and explosions; and a combination of state-of-the-art special effects and stunt-work."
+            },
+            Director: {
+                Name: "Mike Newell",
+                Bio: "Three year training course at Granada Television, with intention of going into theatre. Graduated to directing TV plays, building strong reputation for work with David Hare, David Edgar, Hohn, John Osborne, Jack Rosenthal.",
+                Birthyear: "1942"
+            },
+            Release_date: "2010",
+            ImageURL: "https://www.sobrosnetwork.com/wp-content/uploads/2021/04/prince-of-persia-sands-of-time-1200x675-1.png"
+        }
+    ]);
+    if (movie.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "The list is empty!"
+    }, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 58,
+        columnNumber: 12
+    }, undefined);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: movie.map((movie)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieCard.MovieCard), {
+                movieData: movie
+            }, void 0, false, {
+                fileName: "src/components/main-view/main-view.jsx",
+                lineNumber: 63,
+                columnNumber: 9
+            }, undefined))
+    }, void 0, false, {
+        fileName: "src/components/main-view/main-view.jsx",
+        lineNumber: 61,
+        columnNumber: 5
+    }, undefined);
+};
+_s(MainView, "l2rINrJlOCLyKjGKYKbJ6d+Uq5U=");
+_c = MainView;
+var _c;
+$RefreshReg$(_c, "MainView");
+
+  $parcel$ReactRefreshHelpers$f7a6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"4eg9e","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"evb1z"}],"bwuIu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$67b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const MovieCard = ({ movieData  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: movieData.Title
+    }, void 0, false, {
+        fileName: "src/components/movie-card/movie-card.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = MovieCard;
+var _c;
+$RefreshReg$(_c, "MovieCard");
+
+  $parcel$ReactRefreshHelpers$67b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"4eg9e","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"evb1z"}],"4eg9e":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"evb1z":[function(require,module,exports) {
 "use strict";
 var Refresh = require("7b75eb5b0063431c");
 function debounce(func, delay) {
@@ -27273,137 +27432,6 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"7b75eb5b0063431c":"jtmue"}],"4gflv":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f7a6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f7a6.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MainView", ()=>MainView);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _s = $RefreshSig$();
-const MainView = ()=>{
-    _s();
-    const [movie, setMovie] = (0, _react.useState)([
-        {
-            _id: 1,
-            Title: "The Karate Kid",
-            Description: "Work causes a single mother to move to China with her young son; in his new home, the boy embraces kung fu, taught to him by a master.",
-            Genre: {
-                Name: "Martial Arts",
-                Description: "Martial arts films commonly include hand-to-hand combat along with other types of action, such as stuntwork, chases, and gunfights Sub-genres of martial arts films include kung fu films, wuxia, karate films, and martial arts action comedy films, while related genres include gun fu, jidaigeki and samurai films."
-            },
-            Director: {
-                Name: "Harald Zwart",
-                Bio: "He was born in Leiden, Netherlands, and his family moved to Norway where he grew up. He made his first film when he was 8 years and was active with Super8 and stop motion animation for years. He was accepted into the highly acclaimed Dutch Film Academy in Amsterdam, NL, where he spent 4 years specializing in Directing, Script and Editing. He met his wife and partner Veslemoey Ruud Zwart and they've worked together since. She started managing his deals and started the company Zwart Arbeid A/S",
-                Birthyear: "1965"
-            },
-            Release_date: "2010",
-            ImageURL: "https://images.moviesanywhere.com/92e403194d518b12a4c5a1e1ee0bb454/5b1c7797-5122-4ee1-98bb-b6ffbcc49ade.jpg"
-        },
-        {
-            _id: 2,
-            Title: "The Matrix",
-            Description: "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
-            Genre: {
-                Name: "Science Fiction",
-                Description: "Science fiction is a genre of fiction in which the stories often tell about science and technology of the future. It is important to note that science fiction has a relationship with the principles of science—these stories involve partially true- partially fictitious laws or theories of science."
-            },
-            Director: {
-                Name: "The Wachowskis",
-                Bio: "They are American film and television directors, writers and producers. have worked as a writing and directing team through most of their careers. They made their directing debut in 1996 with Bound and achieved fame with their second film, The Matrix (1999).",
-                Birthyear: [
-                    "1965",
-                    "1967"
-                ]
-            },
-            Release_date: "1999",
-            ImageURL: "https://image.tmdb.org/t/p/original/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
-        },
-        {
-            _id: 3,
-            Title: "Prince of Persia: The Sands of Time",
-            Description: "A young fugitive prince and princess must stop a villain who unknowingly threatens to destroy the world with a special dagger that enables the magic sand inside to reverse time.",
-            Genre: {
-                Name: "Action",
-                Description: "Action films are built around a core set of characteristics: spectacular physical action; a narrative emphasis on fights, chases, and explosions; and a combination of state-of-the-art special effects and stunt-work."
-            },
-            Director: {
-                Name: "Mike Newell",
-                Bio: "Three year training course at Granada Television, with intention of going into theatre. Graduated to directing TV plays, building strong reputation for work with David Hare, David Edgar, Hohn, John Osborne, Jack Rosenthal.",
-                Birthyear: "1942"
-            },
-            Release_date: "2010",
-            ImageURL: "https://www.sobrosnetwork.com/wp-content/uploads/2021/04/prince-of-persia-sands-of-time-1200x675-1.png"
-        }
-    ]);
-    if (movie.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "The list is empty!"
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 56,
-        columnNumber: 12
-    }, undefined);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: movie.map((movie)=>{
-            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                children: movie.Title
-            }, void 0, false, {
-                fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 61,
-                columnNumber: 16
-            }, undefined);
-        })
-    }, void 0, false, {
-        fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 59,
-        columnNumber: 5
-    }, undefined);
-};
-_s(MainView, "l2rINrJlOCLyKjGKYKbJ6d+Uq5U=");
-_c = MainView;
-var _c;
-$RefreshReg$(_c, "MainView");
-
-  $parcel$ReactRefreshHelpers$f7a6.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"4eg9e","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"evb1z","react":"21dqq"}],"4eg9e":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}]},["eTDat","1Dy8B","d8Dch"], "d8Dch", "parcelRequireaec4")
+},{"7b75eb5b0063431c":"jtmue"}],"lJZlQ":[function() {},{}]},["eTDat","1Dy8B","d8Dch"], "d8Dch", "parcelRequireaec4")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
