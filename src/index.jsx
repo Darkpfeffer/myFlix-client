@@ -1,4 +1,5 @@
 import { createRoot} from 'react-dom/client';
+import { MainView} from './components/main-view/main-view';
 
 // Import bundle `./index.scss`
 import './index.scss';
@@ -6,9 +7,7 @@ import './index.scss';
 // Main component
 const MyFlixApplication= () => {
   return (
-    <div className="my-flix">
-      <div>Good morning</div>
-    </div>
+    <MainView />
   )
 };
 
