@@ -1,6 +1,7 @@
 import {useState } from "react";
 
 import {MovieCard} from "../movie-card/movie-card";
+import {MovieView} from "../movie-view/movie-view";
 
 export const MainView= () => {
   const [movie, setMovie] = useState([
@@ -11,12 +12,12 @@ export const MainView= () => {
       Genre: {
         Name: 'Martial Arts',
         Description: 'Martial arts films commonly include hand-to-hand combat along with other types of action, such as stuntwork, chases, and gunfights Sub-genres of martial arts films include kung fu films, wuxia, karate films, and martial arts action comedy films, while related genres include gun fu, jidaigeki and samurai films.'
-      },
+        },
       Director: {
         Name: 'Harald Zwart',
         Bio: "He was born in Leiden, Netherlands, and his family moved to Norway where he grew up. He made his first film when he was 8 years and was active with Super8 and stop motion animation for years. He was accepted into the highly acclaimed Dutch Film Academy in Amsterdam, NL, where he spent 4 years specializing in Directing, Script and Editing. He met his wife and partner Veslemoey Ruud Zwart and they've worked together since. She started managing his deals and started the company Zwart Arbeid A/S",
         Birthyear: '1965'
-      },
+        },
       Release_date: '2010',
       ImageURL: 'https://images.moviesanywhere.com/92e403194d518b12a4c5a1e1ee0bb454/5b1c7797-5122-4ee1-98bb-b6ffbcc49ade.jpg'
     },
@@ -54,13 +55,25 @@ export const MainView= () => {
     }
   ]);
 
+  const [selectedMovie, setSelectedMovie]= useState(null);
+
+  if (selectedMovie) {
+    return <MovieView movieData={selectedMovie} />;
+  }
+
   if (movie.length=== 0) {
     return <div>The list is empty!</div>
   }
   return (
     <div>
       {movie.map((movie)=> (
-        <MovieCard movieData={movie}/>
+        <MovieCard 
+          key={movie._id} 
+          movieData={movie}
+          onMovieClick ={ (newSelectedMovie) => {
+            setSelectedMovie(newSelectedMovie);
+          }}
+        />
       ))}
     </div>
   );
