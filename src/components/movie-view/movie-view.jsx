@@ -23,7 +23,7 @@ export const MovieView= ({ movieData, onBackClick }) => {
         <span>{movieData.Release_date}</span>
       </div>
       <div>
-        <img src={movieData.ImageURL}/>
+        <img src={movieData.ImageURL} className="movie_image"/>
       </div>
     </div>
   )
