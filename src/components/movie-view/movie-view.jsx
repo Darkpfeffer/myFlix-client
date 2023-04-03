@@ -1,6 +1,7 @@
-export const MovieView= ({ movieData }) => {
+export const MovieView= ({ movieData, onBackClick }) => {
   return(
     <div>
+      <button onClick={onBackClick}>Back</button>
       <div>
         <span>Title: </span>
         <span>{movieData.Title}</span>
