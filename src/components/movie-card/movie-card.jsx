@@ -1,5 +1,5 @@
 //importing
-import PorpTypes from "prop-types";
+import PropTypes from "prop-types";
 
 //export and logic
 export const MovieCard= ({ movieData, onMovieClick }) => {
