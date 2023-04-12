@@ -21,6 +21,8 @@ MovieCard.propTypes= {
     Description: PropTypes.string.isRequired,
     Release_date: PropTypes.number.isRequired,
     Genre: PropTypes.object.isRequired,
+    Director: PropTypes.object.isRequired,
+    Actors: PropTypes.array,
     ImageURL: PropTypes.string.isRequired
   })
 }

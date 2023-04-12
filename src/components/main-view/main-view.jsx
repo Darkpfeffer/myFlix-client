@@ -20,7 +20,8 @@ export const MainView= () => {
             Release_date: movie.Release_date,
             Genre: movie.Genre,
             Director: movie.Director,
-            ImageURL: movie.ImageURL
+            ImageURL: movie.ImageURL,
+            Actors: movie.Actors
           }
         }) 
         
