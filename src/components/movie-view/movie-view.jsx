@@ -23,6 +23,10 @@ export const MovieView= ({ movieData, onBackClick }) => {
         <span>{movieData.Release_date}</span>
       </div>
       <div>
+        <span>Actors: </span>
+        <span>{movieData.Actors}</span>
+      </div>
+      <div>
         <img src={movieData.ImageURL} className="movie_image"/>
       </div>
     </div>
