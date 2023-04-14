@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export const LoginView= () => {
+export const LoginView= ({ onLoggedIn }) => {
     const [username, setUsername]= useState("")
     const [password, setPassword]= useState("")
 
@@ -9,14 +9,23 @@ export const LoginView= () => {
         event.preventDefault();
 
         const data= {
-            Password: password,
-            Username: username
+            Username: username,
+            Password: password
             };
 
         fetch("http://127.0.0.1:8080/login", {
             method: "POST",
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            }),
             body: JSON.stringify(data)
-        }).then((response => response.json())).then(data => console.log(data));
+        }).then((res) => {
+            if (res.ok) {
+                onLoggedIn(username);
+            } else {
+                alert("Login failed");
+            }
+        });
     }
     return (
         <form onSubmit={handleSubmit}>

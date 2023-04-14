@@ -10,7 +10,7 @@ export const MainView= () => {
   const [user, setUser]= useState(null);
 
   useEffect(() => {
-    fetch("https://myflix-5sws.onrender.com/movies")
+    fetch("http://127.0.0.1:8080/movies")
       .then((res) => res.json())
       .then((data) => {
         const moviesFromApi= data.map((movie) => {
@@ -32,7 +32,7 @@ export const MainView= () => {
   }, []);
 
   if (!user) {
-    return <LoginView />
+    return <LoginView onLoggedIn={(user) => setUser(user)}/>
   }
 
   if (selectedMovie) {
