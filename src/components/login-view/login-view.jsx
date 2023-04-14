@@ -13,7 +13,7 @@ export const LoginView= ({ onLoggedIn }) => {
             Password: password
             };
 
-        fetch("http://127.0.0.1:8080/login", {
+        fetch("https://myflix-5sws.onrender.com/login", {
             method: "POST",
             headers: new Headers({
                 'Content-Type': 'application/json'

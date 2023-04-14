@@ -18,7 +18,7 @@ export const MainView= () => {
       return;
     }
 
-    fetch("http://127.0.0.1:8080/movies", {
+    fetch("https://myflix-5sws.onrender.com/movies", {
       headers: { Authorization: `Bearer ${token}`}
     })
       .then((res) => res.json())
@@ -46,6 +46,7 @@ export const MainView= () => {
       <div>
         Login:
         <br/>
+        <br/>
         <LoginView 
           onLoggedIn={(user, token) => {
           setUser(user);
@@ -55,6 +56,7 @@ export const MainView= () => {
       <br/>
       <div>
         Register:
+        <br/>
         <br/>
         <SignupView />
       </div>
