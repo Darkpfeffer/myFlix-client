@@ -2,11 +2,12 @@ import {useState, useEffect } from "react";
 
 import {MovieCard} from "../movie-card/movie-card";
 import {MovieView} from "../movie-view/movie-view";
+import { LoginView } from "../login-view/login-view";
 
 export const MainView= () => {
   const [movie, setMovie] = useState([]);
-
   const [selectedMovie, setSelectedMovie]= useState(null);
+  const [user, setUser]= useState(null);
 
   useEffect(() => {
     fetch("https://myflix-5sws.onrender.com/movies")
@@ -29,6 +30,10 @@ export const MainView= () => {
         console.log(moviesFromApi)
       });
   }, []);
+
+  if (!user) {
+    return <LoginView />
+  }
 
   if (selectedMovie) {
     return <MovieView movieData={selectedMovie} onBackClick={() => {setSelectedMovie(null)}}/>;
