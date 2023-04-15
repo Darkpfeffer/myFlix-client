@@ -19,7 +19,7 @@ MovieCard.propTypes= {
   movieData: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    Release_date: PropTypes.number.isRequired,
+    Release_date: PropTypes.string.isRequired,
     Genre: PropTypes.object.isRequired,
     Director: PropTypes.object.isRequired,
     Actors: PropTypes.array,
