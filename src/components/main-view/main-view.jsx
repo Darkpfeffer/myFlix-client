@@ -63,12 +63,25 @@ export const MainView= () => {
   }
 
   if (movie.length=== 0) {
-    return <div>The list is empty!</div>
+    return (
+    <>
+      <Row>
+        <Col xs={{offset: 11}} className="mb-3 mt-2">
+          <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col>
+          The list is empty!
+        </Col>
+      </Row>
+    </>
+    )
   }
   return (
     <div>
       <Row>
-        <Col xs={{offset: 11}} className="mb-3">
+        <Col xs={{offset: 11}} className="mb-3 mt-2">
           <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
         </Col>
       </Row>
