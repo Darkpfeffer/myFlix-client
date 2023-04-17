@@ -99,8 +99,9 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Button as={Col} xs={{offset: 5}} variant="primary" type="submit">Submit</Button>
-                <Col xs={{ offset: 3}}></Col>
+                <Col xs={{offset: 5}} className="mt-2">
+                    <Button variant="primary" type="submit">Submit</Button>
+                </Col>
             </Row>
         </Form>
     )

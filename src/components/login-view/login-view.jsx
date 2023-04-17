@@ -39,34 +39,40 @@ export const LoginView= ({ onLoggedIn }) => {
     return (
         <Form onSubmit={handleSubmit} className="mb-5" >
             <Row>
-                <Col xs={{offset: 5}} className="fw-bold fs-5 me-5 align-self-center ">Login: </Col>
+                <Col xs={{offset: 5}} className="fw-bold fs-5 align-self-center mb-2">Login: </Col>
             </Row>
             <Row>
-            <Form.Group as={Col} controlId="formUsername">
-                <Form.Label>
-                    Username:
-                    <Form.Control 
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                        placeholder="Enter your username"
-                    />
-                </Form.Label>
-            </Form.Group>
-            <Form.Group as={Col} controlId="formPassword">
-                <Form.Label>
-                    Password:
-                    <Form.Control 
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        placeholder="Enter your password"
-                    />
-                </Form.Label>
-            </Form.Group>
-            <Button as={Col} xs={{offset: 1}} variant="primary" type="submit" className="align-self-center">Submit</Button>
+                <Form.Group as={Col} xs={{offset: 4}} controlId="formUsername">
+                    <Form.Label>
+                        Username:
+                        <Form.Control 
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                            placeholder="Enter your username"
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Form.Group as={Col} xs={{offset: 4}} controlId="formPassword">
+                    <Form.Label>
+                        Password:
+                        <Form.Control 
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            placeholder="Enter your password"
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Col xs={{offset: 5}} className="mt-2">
+                    <Button variant="primary" type="submit" className="align-self-center">Submit</Button>
+                </Col>
             </Row>
         </Form>
     )
