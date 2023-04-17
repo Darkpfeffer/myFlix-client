@@ -87,9 +87,8 @@ export const MainView= () => {
       </Row>
       <Row className="justify-content-center">
           {movie.map((movie)=> (
-            <Col md={4} className="mb-5">
+            <Col md={3} className="mb-5" key={movie._id}>
               <MovieCard 
-                key={movie._id} 
                 movieData={movie}
                 onMovieClick ={ (newSelectedMovie) => {
                   setSelectedMovie(newSelectedMovie);
