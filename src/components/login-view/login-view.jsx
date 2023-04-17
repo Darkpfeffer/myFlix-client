@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
+// import bootstrap components
+import {Form, Button, Row, Col} from "react-bootstrap"
+
 export const LoginView= ({ onLoggedIn }) => {
     const [username, setUsername]= useState("")
     const [password, setPassword]= useState("")
@@ -34,28 +37,37 @@ export const LoginView= ({ onLoggedIn }) => {
         });
     }
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input 
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <label>
-                Password:
-                <input 
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <br/>
-            <button type="submit">Submit</button>
-        </form>
+        <Form onSubmit={handleSubmit} className="mb-5" >
+            <Row>
+                <Col xs={{offset: 5}} className="fw-bold fs-5 me-5 align-self-center ">Login: </Col>
+            </Row>
+            <Row>
+            <Form.Group as={Col} controlId="formUsername">
+                <Form.Label>
+                    Username:
+                    <Form.Control 
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                        placeholder="Enter your username"
+                    />
+                </Form.Label>
+            </Form.Group>
+            <Form.Group as={Col} controlId="formPassword">
+                <Form.Label>
+                    Password:
+                    <Form.Control 
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        placeholder="Enter your password"
+                    />
+                </Form.Label>
+            </Form.Group>
+            <Button as={Col} xs={{offset: 1}} variant="primary" type="submit" className="align-self-center">Submit</Button>
+            </Row>
+        </Form>
     )
 }
