@@ -1,5 +1,8 @@
 import { useState} from "react";
 
+// import bootstrap components
+import {Form, Button, Row, Col} from "react-bootstrap"
+
 export const SignupView= () => {
     const [username, setUsername]= useState("");
     const [password, setPassword]= useState("");
@@ -35,45 +38,70 @@ export const SignupView= () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    minLength="5"
-                    required
-                />
-            </label><br/>
-            <label>
-                Password:
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label><br/>
-            <label>
-                Email:
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-            </label><br/>
-            <label>
-                Birthday:
-                <input
-                    type="date"
-                    value={birthday}
-                    onChange={(e) => setBirthday(e.target.value)}
-                    required
-                />
-            </label><br/>
-            <button type="submit">Submit</button>
-        </form>
+        <Form onSubmit={handleSubmit}>
+            <Row className="mb-2">
+                <Col xs={{offset: 5}} className="fs-5 fw-bold">or Register:</Col>
+            </Row>
+            <Row>
+                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterUsername">
+                    <Form.Label>
+                        Username:
+                        <Form.Control
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            minLength="5"
+                            required
+                            placeholder="Enter your username"
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterPassword">
+                    <Form.Label>
+                        Password:
+                        <Form.Control
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            placeholder="Enter your password"
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterEmail">
+                    <Form.Label>
+                        Email:
+                        <Form.Control
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            placeholder="Enter your email address"
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterBirthday">
+                    <Form.Label>
+                        Birthday:
+                        <Form.Control
+                            type="date"
+                            value={birthday}
+                            onChange={(e) => setBirthday(e.target.value)}
+                            required
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Button as={Col} xs={{offset: 5}} variant="primary" type="submit">Submit</Button>
+                <Col xs={{ offset: 3}}></Col>
+            </Row>
+        </Form>
     )
 }
