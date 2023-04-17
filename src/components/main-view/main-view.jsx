@@ -79,7 +79,7 @@ export const MainView= () => {
     )
   }
   return (
-    <div>
+    <>
       <Row>
         <Col xs={{offset: 11}} className="mb-3 mt-2">
           <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
@@ -97,6 +97,6 @@ export const MainView= () => {
             </Col>
           ))}
       </Row>
-    </div>
+    </>
   );
 }
