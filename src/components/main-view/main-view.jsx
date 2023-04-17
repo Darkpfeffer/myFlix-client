@@ -1,5 +1,9 @@
 import {useState, useEffect } from "react";
 
+// Import Bootstrap components
+import {Row, Col, Button} from "react-bootstrap"
+
+// Import components from the project
 import {MovieCard} from "../movie-card/movie-card";
 import {MovieView} from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
@@ -43,23 +47,13 @@ export const MainView= () => {
   if (!user) {
     return ( 
     <div>
-      <div>
-        Login:
-        <br/>
-        <br/>
         <LoginView 
           onLoggedIn={(user, token) => {
           setUser(user);
           setToken(token);
         }}/>
-      </div>
-      <br/>
-      <div>
-        Register:
-        <br/>
-        <br/>
+
         <SignupView />
-      </div>
     </div>
     )
   }
@@ -73,20 +67,24 @@ export const MainView= () => {
   }
   return (
     <div>
-      <div>
-        <button onClick={() => { setUser(null); setToken(null); }}>Logout</button>
-      </div>
-      <div>
-      {movie.map((movie)=> (
-        <MovieCard 
-          key={movie._id} 
-          movieData={movie}
-          onMovieClick ={ (newSelectedMovie) => {
-            setSelectedMovie(newSelectedMovie);
-          }}
-        />
-      ))}
-      </div>
+      <Row>
+        <Col xs={{offset: 11}} className="mb-3">
+          <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+          {movie.map((movie)=> (
+            <Col md={4} className="mb-5">
+              <MovieCard 
+                key={movie._id} 
+                movieData={movie}
+                onMovieClick ={ (newSelectedMovie) => {
+                  setSelectedMovie(newSelectedMovie);
+                }}
+              />
+            </Col>
+          ))}
+      </Row>
     </div>
   );
 }

@@ -1,11 +1,10 @@
+//Variables
 $color: steelblue;
 
-.my-flix {
-  color: $color;
-}
-
+//Styling
 .movie_image {
   width: 500px;
 }
 
+//Import Bootstrap scss
 @import '~bootstrap/scss/bootstrap.scss';
