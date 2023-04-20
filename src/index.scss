@@ -1,9 +1,37 @@
 //Variables
-$color: steelblue;
+$body-bg: #212529;
+$primary: Crimson;
+$secondary: Dimgrey;
+$font-size-base: 0.9rem;
 
 //Styling
+
 .movie_image {
-  width: 500px;
+  width: 350px;
+}
+
+.mobile {
+  display: none;
+}
+
+#formUsername, #formPassword, #formRegisterUsername, #formRegisterPassword, #formRegisterEmail, #formRegisterBirthday{
+  background-color: whitesmoke;
+}
+
+@media all and (max-width: 575px) {
+  .movie_image {
+    min-width: 120px;
+  }
+}
+
+@media all and (max-width: 250px) {
+  * {
+    font-size: 0.8rem;
+  }
+
+  .mobile {
+    display: inherit;
+  }
 }
 
 //Import Bootstrap scss

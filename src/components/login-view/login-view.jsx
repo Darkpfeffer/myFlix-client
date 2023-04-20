@@ -39,13 +39,13 @@ export const LoginView= ({ onLoggedIn }) => {
     return (
         <Form onSubmit={handleSubmit} className="mb-5" >
             <Row>
-                <Col xs={{offset: 5}} className="fw-bold fs-5 align-self-center mb-2">Login: </Col>
+                <Col xs={{offset: 4}} className="fw-bold fs-5 align-self-center mb-2 mt-4">Login: </Col>
             </Row>
             <Row>
                 <Form.Group as={Col} xs={{offset: 4}} controlId="formUsername">
                     <Form.Label>
                         Username:
-                        <Form.Control 
+                        <Form.Control
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -70,7 +70,7 @@ export const LoginView= ({ onLoggedIn }) => {
                 </Form.Group>
             </Row>
             <Row>
-                <Col xs={{offset: 5}} className="mt-2">
+                <Col xs={{offset: 4}} className="mt-2">
                     <Button variant="primary" type="submit" className="align-self-center">Submit</Button>
                 </Col>
             </Row>

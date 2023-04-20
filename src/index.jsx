@@ -8,7 +8,7 @@ import './index.scss';
 // Main component
 const MyFlixApplication= () => {
   return (
-    <Container>
+    <Container className='text-bg-dark mx-auto'>
       <MainView />
     </Container>
   )

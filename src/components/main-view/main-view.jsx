@@ -47,7 +47,7 @@ export const MainView= () => {
   if (!user) {
     return ( 
     <div>
-        <LoginView 
+        <LoginView
           onLoggedIn={(user, token) => {
           setUser(user);
           setToken(token);
@@ -66,7 +66,7 @@ export const MainView= () => {
     return (
     <>
       <Row>
-        <Col xs={{offset: 11}} className="mb-3 mt-2">
+        <Col md={{offset: 11}} className="mb-3 mt-2">
           <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
         </Col>
       </Row>
@@ -81,13 +81,13 @@ export const MainView= () => {
   return (
     <>
       <Row>
-        <Col xs={{offset: 11}} className="mb-3 mt-2">
+        <Col sm={{offset: 11}} className="mb-3 mt-2">
           <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
         </Col>
       </Row>
       <Row className="justify-content-center">
           {movie.map((movie)=> (
-            <Col md={3} className="mb-5" key={movie._id}>
+            <Col sm= {6} md={4} lg={3} className="mb-5" key={movie._id}>
               <MovieCard 
                 movieData={movie}
                 onMovieClick ={ (newSelectedMovie) => {

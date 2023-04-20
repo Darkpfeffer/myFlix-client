@@ -40,7 +40,7 @@ export const SignupView= () => {
     return (
         <Form onSubmit={handleSubmit}>
             <Row className="mb-2">
-                <Col xs={{offset: 5}} className="fs-5 fw-bold">or Register:</Col>
+                <Col xs={{offset: 4}} className="fs-5 fw-bold">or Register:</Col>
             </Row>
             <Row>
                 <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterUsername">
@@ -99,7 +99,7 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Col xs={{offset: 5}} className="mt-2">
+                <Col xs={{offset: 4}} className="mt-2">
                     <Button variant="primary" type="submit">Submit</Button>
                 </Col>
             </Row>
