@@ -1,4 +1,5 @@
 import {useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 // Import Bootstrap components
 import {Row, Col, Button} from "react-bootstrap"
@@ -44,59 +45,55 @@ export const MainView= () => {
       });
   }, [token]);
 
-  if (!user) {
-    return ( 
-    <div>
-        <LoginView
-          onLoggedIn={(user, token) => {
-          setUser(user);
-          setToken(token);
-        }}/>
-
-        <SignupView />
-    </div>
-    )
-  }
-
-  if (selectedMovie) {
-    return <MovieView movieData={selectedMovie} onBackClick={() => {setSelectedMovie(null)}}/>;
-  }
-
-  if (movie.length=== 0) {
-    return (
-    <>
-      <Row>
-        <Col md={{offset: 11}} className="mb-3 mt-2">
-          <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
-        </Col>
-      </Row>
-      <Row className="justify-content-center">
-        <Col>
-          The list is empty!
-        </Col>
-      </Row>
-    </>
-    )
-  }
   return (
-    <>
+    <BrowserRouter>
       <Row>
-        <Col sm={{offset: 11}} className="mb-3 mt-2">
-          <Button onClick={() => { setUser(null); setToken(null); }}>Logout</Button>
-        </Col>
+        <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  { user ? (
+                    <Col xs={12} key={movie._id}>
+                      <MovieCard />
+                    </Col>
+                  ) : (
+                    <Navigate to="/login"/>
+                  )}
+                </>
+              }
+            />
+            <Route 
+              path="/login"
+              element={
+                <>
+                  { user ? (
+                    <Navigate to="/" />
+                  ) : (
+                      <Col xs={12}>
+                        <LoginView onLoggedIn={(user, token) => {
+                          setUser(user);
+                          setToken(token);
+                          }} />
+                      </Col>
+                  )}
+                </>
+              }
+            />
+            <Route 
+              path="/signup"
+              element={
+                <>
+                  { user ? (
+                    <Navigate to="/"/>
+                  ) : (
+                    <SignupView />
+                  )}
+                </>
+              }
+            />
+        </Routes>
       </Row>
-      <Row className="justify-content-center">
-          {movie.map((movie)=> (
-            <Col sm= {6} md={4} lg={3} className="mb-5" key={movie._id}>
-              <MovieCard 
-                movieData={movie}
-                onMovieClick ={ (newSelectedMovie) => {
-                  setSelectedMovie(newSelectedMovie);
-                }}
-              />
-            </Col>
-          ))}
-      </Row>
-    </>
-  );
+    </BrowserRouter>
+  )
 }

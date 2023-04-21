@@ -1,4 +1,5 @@
 import { useState} from "react";
+import { Link} from "react-router-dom";
 
 // import bootstrap components
 import {Form, Button, Row, Col} from "react-bootstrap"
@@ -102,6 +103,12 @@ export const SignupView= () => {
                 <Col xs={{offset: 4}} className="mt-2">
                     <Button variant="primary" type="submit">Submit</Button>
                 </Col>
+                <Col xs={3}>
+                    <Link to={`/login`}>
+                        I already have an account.
+                    </Link>
+                </Col>
+                <Col></Col>
             </Row>
         </Form>
     )
