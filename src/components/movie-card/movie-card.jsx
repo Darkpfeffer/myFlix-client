@@ -1,16 +1,38 @@
 //importing
 import PropTypes from "prop-types";
 
+//importing Bootstrap comtonents
+import Card from "react-bootstrap/Card"
+
 //export and logic
 export const MovieCard= ({ movieData, onMovieClick }) => {
   return (
-    <div
+    <Card
       onClick= {() => {
         onMovieClick(movieData);
       }}
+      className="text-bg-dark border-secondary rounded"
     >
-      {movieData.Title}
-    </div>
+        <Card.Img className="px-3 pt-3" src={movieData.ImageURL}/>
+        <Card.Body>
+          <Card.Title className="fw-bold">{movieData.Title} ({movieData.Release_date})</Card.Title>
+          <Card.Text 
+            className="fw-semibold border-top border-bottom border-secondary"
+          >
+            Genre: <br className="mobile"/>{movieData.Genre.Name}
+          </Card.Text>
+          <Card.Text 
+            className="fw-semibold border-top border-bottom border-secondary"
+          >
+            Director: <br className="mobile"/>{movieData.Director.Name}
+          </Card.Text>
+          <Card.Text 
+            className="border-top border-bottom border-secondary"
+          >
+            {movieData.Description}
+          </Card.Text>
+        </Card.Body>
+    </Card>
   )
 };
 
