@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 //importing Bootstrap comtonents
-import Card from "react-bootstrap/Card"
+import Card from "react-bootstrap/Card";
+
+//import self scss
+import "./movie-card.scss";
 
 //export and logic
 export const MovieCard= ({ movieData }) => {
   return (
-    <Link to={`/movies/${movieData._id}`}>
+    <Link to={`/movies/${movieData._id}`} className="movie-card">
       <Card
         className="text-bg-dark border-secondary rounded"
       >
