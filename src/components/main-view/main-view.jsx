@@ -62,7 +62,23 @@ export const MainView= () => {
                       </Col>
                     ))
                   ) : (
-                    <Navigate to="/login"/>
+                    <Navigate to="/login" replace/>
+                  )}
+                </>
+              }
+            />
+            <Route 
+              path="/movies/:movieId"
+              element={
+                <>
+                  {user && movie.length === 0 ? (
+                    <Col>The list is empty!</Col>
+                  ) : user ? (
+                    <Col xs={12}>
+                      <MovieView movieData={movie} />
+                    </Col>
+                  ) : (
+                    <Navigate to="/login" replace/>
                   )}
                 </>
               }
@@ -72,7 +88,7 @@ export const MainView= () => {
               element={
                 <>
                   { user ? (
-                    <Navigate to="/" />
+                    <Navigate to="/" replace/>
                   ) : (
                       <Col xs={12}>
                         <LoginView onLoggedIn={(user, token) => {
@@ -89,7 +105,7 @@ export const MainView= () => {
               element={
                 <>
                   { user ? (
-                    <Navigate to="/"/>
+                    <Navigate to="/" replace/>
                   ) : (
                     <SignupView />
                   )}
