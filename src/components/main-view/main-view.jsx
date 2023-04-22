@@ -53,10 +53,14 @@ export const MainView= () => {
               path="/"
               element={
                 <>
-                  { user ? (
-                    <Col xs={12} key={movie._id}>
-                      <MovieCard />
-                    </Col>
+                  { user && movie.length === 0 ? (
+                    <Col>The list is empty!</Col>
+                  ) : user ? (
+                    movie.map((Movie) => (
+                      <Col xs={12} key={Movie._id}>
+                        <MovieCard movieData={Movie}/>
+                      </Col>
+                    ))
                   ) : (
                     <Navigate to="/login"/>
                   )}
