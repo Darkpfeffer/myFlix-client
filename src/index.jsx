@@ -1,6 +1,5 @@
 import { createRoot} from 'react-dom/client';
 import { MainView} from './components/main-view/main-view';
-import { NavigationBar } from './components/navigation-bar/navigation-bar';
 import Container from "react-bootstrap/Container";
 
 // Import bundle `./index.scss`
@@ -9,8 +8,7 @@ import './index.scss';
 // Main component
 const MyFlixApplication= () => {
   return (
-    <Container className='text-bg-dark mx-auto'>
-      <NavigationBar/>
+    <Container className='text-bg-dark mx-auto' fluid>
       <MainView />
     </Container>
   )

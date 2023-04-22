@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {Row, Col, Button} from "react-bootstrap"
 
 // Import components from the project
+import { NavigationBar } from '../navigation-bar/navigation-bar';
 import {MovieCard} from "../movie-card/movie-card";
 import {MovieView} from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
@@ -47,6 +48,19 @@ export const MainView= () => {
 
   return (
     <BrowserRouter>
+      <Row>
+        <Col>
+          <NavigationBar
+            user={user}
+            token={token}
+            onLoggedOut={() =>{
+              setUser(null);
+              setToken(null);
+              localStorage.clear();
+            }}
+          />
+        </Col>
+      </Row>
       <Row>
         <Routes>
             <Route
