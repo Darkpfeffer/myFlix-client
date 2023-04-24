@@ -1,3 +1,6 @@
+//import
+import { Link } from "react-router-dom";
+
 //Import react-bootstrap
 import {Row, Col} from "react-bootstrap";
 
@@ -11,8 +14,13 @@ export const ProfileView = ({storedUser, favoriteMovies}) => {
                 <Col>
                     User:
                 </Col>
-                <Col xs={11}>
+                <Col xs={10}>
                     {storedUser.Username}
+                </Col>
+                <Col>
+                    <Link to={`/users/settings`}>
+                        Settings
+                    </Link>
                 </Col>
             </Row>
             <Row>
