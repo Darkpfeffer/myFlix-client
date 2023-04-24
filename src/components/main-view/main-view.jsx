@@ -10,7 +10,7 @@ import {MovieCard} from "../movie-card/movie-card";
 import {MovieView} from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
-import { ProfileView } from "../profile-view/profile-view";
+import { ProfileView } from "../profile/profile-view/profile-view";
 
 export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
@@ -19,7 +19,9 @@ export const MainView= () => {
   const [user, setUser]= useState(null);
   const [token, setToken]= useState(null);
 
-  let favoriteMovies= movie.filter((m) => user.FavoriteMovies.includes(m._id));
+  if (user) {
+    var favoriteMovieList= movie.filter((m) => user.FavoriteMovies.includes(m._id));
+  }
 
   useEffect(() => {
     if(!token && !(storedUser && storedToken)) {
@@ -136,7 +138,7 @@ export const MainView= () => {
                 <>
                   { user ? (
                       <Col>
-                        <ProfileView storedUser={storedUser} favoriteMovies={favoriteMovies}/>
+                        <ProfileView storedUser={storedUser} favoriteMovies={favoriteMovieList}/>
                       </Col>
                   ) : (
                     <Navigate to="/login" replace/>

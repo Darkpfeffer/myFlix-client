@@ -2,7 +2,7 @@
 import {Row, Col} from "react-bootstrap";
 
 //import components
-import { MovieCard } from "../movie-card/movie-card";
+import { MovieCard } from "../../movie-card/movie-card";
 
 export const ProfileView = ({storedUser, favoriteMovies}) => {
     return (
@@ -38,7 +38,7 @@ export const ProfileView = ({storedUser, favoriteMovies}) => {
             </Row>
             <Row>
                 {favoriteMovies.map((movie) => (
-                    <Col>
+                    <Col key={movie._id}>
                         <MovieCard movieData={movie}/>
                     </Col>
                 ))}

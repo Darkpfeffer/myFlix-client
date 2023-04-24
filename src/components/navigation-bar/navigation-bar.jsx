@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 
 //Import React Bootstrap
-import {Nav, Navbar, Button} from "react-bootstrap";
+import {Nav, NavDropdown, Navbar} from "react-bootstrap";
 
 export const NavigationBar = ({user, onLoggedOut}) => {
     return (
@@ -25,7 +25,11 @@ export const NavigationBar = ({user, onLoggedOut}) => {
                             <Nav.Link as={Link} to={`/`} className="navbar-link">
                             Home
                             </Nav.Link>
-                            <Nav.Link as={Link} to={`/users`}>Profile</Nav.Link>
+                            <NavDropdown title="Profile" id="basic-nav-dropdown">
+                                <NavDropdown.Item as={Link} to={`/users`}>
+                                    Info
+                                </NavDropdown.Item>
+                            </NavDropdown>
                             <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
                         </>
                     )}
