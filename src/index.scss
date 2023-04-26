@@ -14,7 +14,9 @@ $font-size-base: 0.9rem;
   display: none;
 }
 
-#formUsername, #formPassword, #formRegisterUsername, #formRegisterPassword, #formRegisterEmail, #formRegisterBirthday{
+#formUsername, #formPassword, #formRegisterUsername,
+#formRegisterPassword, #formRegisterEmail, #formRegisterBirthday,
+#formNewPassword, #formControlPassword{
   background-color: whitesmoke;
 }
 

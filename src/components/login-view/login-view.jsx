@@ -81,9 +81,6 @@ export const LoginView= ({ onLoggedIn }) => {
                 </Col>
                 <Col xs={{offset: 2}}></Col>
             </Row>
-            <Row>
-                
-            </Row>
         </Form>
     )
 }
