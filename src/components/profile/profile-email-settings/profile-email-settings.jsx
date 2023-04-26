@@ -4,9 +4,9 @@ import { useState } from "react";
 //import react bootstrap
 import {Form, Button, FormGroup} from "react-bootstrap"
 
-export const ProfileUsernameSettings = ({ storedUser, storedToken, onChanging }) => {
-const [username, setUsername] = useState("");
-const [controlUsername, setControlUsername] = useState("");
+export const ProfileEmailSettings = ({ storedUser, storedToken, onChanging }) => {
+const [email, setEmail] = useState("");
+const [controlEmail, setControlEmail] = useState("");
 const [password, setPassword] = useState("");
 const [controlPassword, setControlPassword] = useState("");
 
@@ -18,15 +18,15 @@ const [controlPassword, setControlPassword] = useState("");
             Authorization: `Bearer ${storedToken}`
         }
 
-        if (username === controlUsername && password === controlPassword) {
+        if (email === controlEmail && password === controlPassword) {
             var data= {
-                Username: username,
+                Username: storedUser.Username,
                 Password: password,
-                Email: storedUser.Email,
+                Email: email,
                 Birthday: storedUser.Birthday
             } 
         } else {
-            alert ("New username and password is not the same at the two fields!");
+            alert ("New email and password is not the same at the two fields!");
             return;
         }
     
@@ -38,14 +38,14 @@ const [controlPassword, setControlPassword] = useState("");
         }).then((res) => (res.json())
         ).then((result) => {
             if (result.Username) {
-                alert ("New username and password are successfully set!")
+                alert ("New email and password are successfully set!")
                 localStorage.setItem("user", null)
                 localStorage.setItem("token", null)
                 onChanging (result.user, result.token)
             } 
         }).catch((err) => {
-            if (!username && !password) {
-                alert("Enter the new username and password in both fields")
+            if (!email && !password) {
+                alert("Enter the new email and password in both fields")
             } else {
                 alert("Something went wrong" + err)
             }
@@ -54,30 +54,29 @@ const [controlPassword, setControlPassword] = useState("");
     }
     return (
         <Form onSubmit={handleSubmit}>
-            <FormGroup controlId="formNewUsername">
-                <Form.Label>New username:</Form.Label>
+            <FormGroup controlId="formNewEmail">
+                <Form.Label>New email:</Form.Label>
                 <Form.Control
                     className="text-bg-dark"
                     type="text" 
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    minLength="5"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
-                    placeholder="Enter new username" 
+                    placeholder="Enter new email" 
                 />
             </FormGroup>
-            <FormGroup controlId="formControlUsername">
-                <Form.Label>Enter new username again:</Form.Label>
+            <FormGroup controlId="formControlEmail">
+                <Form.Label>Enter new email again:</Form.Label>
                 <Form.Control 
                     className="text-bg-dark"
                     type="text"
-                    value={controlUsername}
-                    onChange={(e) => setControlUsername(e.target.value)}
-                    placeholder="Enter new username again"
+                    value={controlEmail}
+                    onChange={(e) => setControlEmail(e.target.value)}
+                    placeholder="Enter new email again"
                 />
             </FormGroup>
 
-            <FormGroup controlId="formNewPassword2">
+            <FormGroup controlId="formNewPassword3">
                 <Form.Label>New Password:</Form.Label>
                 <Form.Control
                     className="text-bg-dark"
@@ -88,7 +87,7 @@ const [controlPassword, setControlPassword] = useState("");
                     placeholder="Enter new password" 
                 />
             </FormGroup>
-            <FormGroup controlId="formControlPassword2">
+            <FormGroup controlId="formControlPassword3">
                 <Form.Label>Enter new password again:</Form.Label>
                 <Form.Control 
                     className="text-bg-dark"

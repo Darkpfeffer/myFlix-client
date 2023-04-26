@@ -4,7 +4,7 @@ import { useState } from "react";
 //import react bootstrap
 import {Form, Button, FormGroup} from "react-bootstrap"
 
-export const ProfilePasswordSettings = ({ storedUser, storedToken }) => {
+export const ProfilePasswordSettings = ({ storedUser, storedToken, onChanging }) => {
 const [password, setPassword] = useState("");
 const [controlPassword, setControlPassword] = useState("");
 
@@ -22,7 +22,6 @@ const [controlPassword, setControlPassword] = useState("");
                 Password: password,
                 Email: storedUser.Email,
                 Birthday: storedUser.Birthday
-    
             } 
         } else {
             alert ("New password is not the same at the two fields!");
@@ -38,6 +37,9 @@ const [controlPassword, setControlPassword] = useState("");
         ).then((result) => {
             if (result.Username) {
                 alert ("New password is successfully set!")
+                localStorage.setItem("user", null)
+                localStorage.setItem("token", null)
+                onChanging (result.user, result.token)
             } 
         }).catch((err) => {
             if (!password) {
@@ -54,7 +56,6 @@ const [controlPassword, setControlPassword] = useState("");
                 <Form.Label>New Password:</Form.Label>
                 <Form.Control
                     className="text-bg-dark"
-                    variant="dark" 
                     type="password" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -69,7 +70,6 @@ const [controlPassword, setControlPassword] = useState("");
                     type="password"
                     value={controlPassword}
                     onChange={(e) => setControlPassword(e.target.value)}
-                    required
                     placeholder="Enter new password again"
                 />
             </FormGroup>

@@ -16,6 +16,7 @@ import { ProfileView } from "../profile/profile-view/profile-view";
 import { ProfileSettingsView } from "../profile/profile-settings-view/profile-settings-view";
 import { ProfilePasswordSettings } from "../profile/profile-password-settings/profile-password-settings";
 import { ProfileUsernameSettings } from "../profile/profile-username-settings/profile-username-settings";
+import { ProfileEmailSettings } from "../profile/profile-email-settings/profile-email-settings";
 
 export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
@@ -175,6 +176,10 @@ export const MainView= () => {
                       <ProfilePasswordSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
+                        onChanging={(user, token) => {
+                          setUser(null),
+                          setToken(null)
+                        }}
                       />
                     </Col>
                   ) : (
@@ -192,6 +197,31 @@ export const MainView= () => {
                       <ProfileUsernameSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
+                        onChanging={(user, token) => {
+                          setUser(null),
+                          setToken(null)
+                        }}
+                      />
+                    </Col>
+                  ) : (
+                    <Navigate to="/login" replace/>
+                  )}
+                </>
+              }
+            />
+            <Route 
+              path="/users/settings/email"
+              element={
+                <>
+                  { user ? (
+                    <Col>
+                      <ProfileEmailSettings 
+                        storedUser={storedUser} 
+                        storedToken={storedToken}
+                        onChanging={(user, token) => {
+                          setUser(null),
+                          setToken(null)
+                        }}
                       />
                     </Col>
                   ) : (
