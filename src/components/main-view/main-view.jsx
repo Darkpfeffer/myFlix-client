@@ -17,6 +17,7 @@ import { ProfileSettingsView } from "../profile/profile-settings-view/profile-se
 import { ProfilePasswordSettings } from "../profile/profile-password-settings/profile-password-settings";
 import { ProfileUsernameSettings } from "../profile/profile-username-settings/profile-username-settings";
 import { ProfileEmailSettings } from "../profile/profile-email-settings/profile-email-settings";
+import { ProfileBirthdaySettings } from "../profile/profile-birthday-settings/profile-birthday-settings";
 
 export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
@@ -216,6 +217,27 @@ export const MainView= () => {
                   { user ? (
                     <Col>
                       <ProfileEmailSettings 
+                        storedUser={storedUser} 
+                        storedToken={storedToken}
+                        onChanging={(user, token) => {
+                          setUser(null),
+                          setToken(null)
+                        }}
+                      />
+                    </Col>
+                  ) : (
+                    <Navigate to="/login" replace/>
+                  )}
+                </>
+              }
+            />
+            <Route 
+              path="/users/settings/birthday"
+              element={
+                <>
+                  { user ? (
+                    <Col>
+                      <ProfileBirthdaySettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
                         onChanging={(user, token) => {
