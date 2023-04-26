@@ -38,7 +38,7 @@ export const LoginView= ({ onLoggedIn }) => {
         });
     }
     return (
-        <Form onSubmit={handleSubmit} className="mb-5" >
+        <Form onSubmit={handleSubmit} className="mb-5" variant="dark">
             <Row>
                 <Col xs={{offset: 4}} className="fw-bold fs-5 align-self-center mb-2 mt-4">Login: </Col>
             </Row>
@@ -47,6 +47,7 @@ export const LoginView= ({ onLoggedIn }) => {
                     <Form.Label>
                         Username:
                         <Form.Control
+                            className="text-bg-dark"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -61,6 +62,7 @@ export const LoginView= ({ onLoggedIn }) => {
                     <Form.Label>
                         Password:
                         <Form.Control 
+                            className="text-bg-dark"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

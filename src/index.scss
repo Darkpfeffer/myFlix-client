@@ -14,10 +14,9 @@ $font-size-base: 0.9rem;
   display: none;
 }
 
-#formUsername, #formPassword, #formRegisterUsername,
-#formRegisterPassword, #formRegisterEmail, #formRegisterBirthday,
-#formNewPassword, #formControlPassword{
+.form-input {
   background-color: whitesmoke;
+  color: whitesmoke;
 }
 
 @media all and (max-width: 575px) {

@@ -53,6 +53,7 @@ const [controlPassword, setControlPassword] = useState("");
             <FormGroup controlId="formNewPassword">
                 <Form.Label>New Password:</Form.Label>
                 <Form.Control
+                    className="text-bg-dark"
                     variant="dark" 
                     type="password" 
                     value={password}
@@ -63,6 +64,7 @@ const [controlPassword, setControlPassword] = useState("");
             <FormGroup controlId="formControlPassword">
                 <Form.Label>Enter new password again:</Form.Label>
                 <Form.Control 
+                    className="text-bg-dark"
                     type="password"
                     value={controlPassword}
                     onChange={(e) => setControlPassword(e.target.value)}
