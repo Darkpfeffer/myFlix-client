@@ -15,6 +15,7 @@ import { SignupView } from "../signup-view/signup-view";
 import { ProfileView } from "../profile/profile-view/profile-view";
 import { ProfileSettingsView } from "../profile/profile-settings-view/profile-settings-view";
 import { ProfilePasswordSettings } from "../profile/profile-password-settings/profile-password-settings";
+import { ProfileUsernameSettings } from "../profile/profile-username-settings/profile-username-settings";
 
 export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
@@ -172,6 +173,23 @@ export const MainView= () => {
                   { user ? (
                     <Col>
                       <ProfilePasswordSettings 
+                        storedUser={storedUser} 
+                        storedToken={storedToken}
+                      />
+                    </Col>
+                  ) : (
+                    <Navigate to="/login" replace/>
+                  )}
+                </>
+              }
+            />
+            <Route 
+              path="/users/settings/username"
+              element={
+                <>
+                  { user ? (
+                    <Col>
+                      <ProfileUsernameSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
                       />

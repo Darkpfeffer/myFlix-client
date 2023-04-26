@@ -14,7 +14,17 @@ export const ProfileSettingsView = () => {
             </Row>
             <Row>
                 <Col>
+                    <Link to={`/users/settings/username`}>Change username</Link>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
                     <Link to={`/users/settings/email`}>Change email address</Link>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Link to={`/users/settings/birthday`}>Change your birthday</Link>
                 </Col>
             </Row>
             <Row>
