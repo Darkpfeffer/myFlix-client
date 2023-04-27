@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import {Row, Col} from "react-bootstrap";
 
 //import components
-import { MovieCard } from "../../movie-card/movie-card";
+import { MovieCard } from "../../movie/movie-card/movie-card";
 
 export const ProfileView = ({storedUser, favoriteMovies}) => {
     return (
