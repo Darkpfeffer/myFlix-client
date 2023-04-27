@@ -18,6 +18,7 @@ import { ProfilePasswordSettings } from "../profile/profile-password-settings/pr
 import { ProfileUsernameSettings } from "../profile/profile-username-settings/profile-username-settings";
 import { ProfileEmailSettings } from "../profile/profile-email-settings/profile-email-settings";
 import { ProfileBirthdaySettings } from "../profile/profile-birthday-settings/profile-birthday-settings";
+import { ProfileDeleteView } from "../profile/profile-delete-view/profile-delete-view";
 
 export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
@@ -177,7 +178,7 @@ export const MainView= () => {
                       <ProfilePasswordSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
-                        onChanging={(user, token) => {
+                        onChanging={() => {
                           setUser(null),
                           setToken(null)
                         }}
@@ -198,7 +199,7 @@ export const MainView= () => {
                       <ProfileUsernameSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
-                        onChanging={(user, token) => {
+                        onChanging={() => {
                           setUser(null),
                           setToken(null)
                         }}
@@ -219,7 +220,7 @@ export const MainView= () => {
                       <ProfileEmailSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
-                        onChanging={(user, token) => {
+                        onChanging={() => {
                           setUser(null),
                           setToken(null)
                         }}
@@ -240,7 +241,28 @@ export const MainView= () => {
                       <ProfileBirthdaySettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
-                        onChanging={(user, token) => {
+                        onChanging={() => {
+                          setUser(null),
+                          setToken(null)
+                        }}
+                      />
+                    </Col>
+                  ) : (
+                    <Navigate to="/login" replace/>
+                  )}
+                </>
+              }
+            />
+            <Route 
+              path="/users/settings/delete"
+              element={
+                <>
+                  { user ? (
+                    <Col>
+                      <ProfileDeleteView 
+                        storedUser={storedUser} 
+                        storedToken={storedToken}
+                        onDelete={() => {
                           setUser(null),
                           setToken(null)
                         }}
