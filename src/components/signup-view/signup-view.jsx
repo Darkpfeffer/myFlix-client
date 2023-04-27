@@ -7,6 +7,7 @@ import {Form, Button, Row, Col} from "react-bootstrap"
 export const SignupView= () => {
     const [username, setUsername]= useState("");
     const [password, setPassword]= useState("");
+    const [controlPassword, setControlPassword]= useState("")
     const [email, setEmail]= useState("");
     const [birthday, setBirthday]= useState("");
 
@@ -29,7 +30,7 @@ export const SignupView= () => {
         }).then((res) => {
             if (res.ok) {
                 alert("Signup successful");
-                window.location.reload();
+                window.location.replace("/login");
             } else {
                 alert("Signup failed");
             }
@@ -70,6 +71,21 @@ export const SignupView= () => {
                             onChange={(e) => setPassword(e.target.value)}
                             required
                             placeholder="Enter your password"
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterControlPassword">
+                    <Form.Label>
+                        Enter password again:
+                        <Form.Control
+                            className="text-bg-dark"
+                            type="password"
+                            value={controlPassword}
+                            onChange={(e) => setControlPassword(e.target.value)}
+                            required
+                            placeholder="Enter your password again"
                         />
                     </Form.Label>
                 </Form.Group>
