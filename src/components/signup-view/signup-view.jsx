@@ -40,12 +40,15 @@ export const SignupView= () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit} className="mt-5">
-            <Row className="mb-2">
-                <Col xs={{offset: 4}} className="fs-5 fw-bold">Register:</Col>
+        <Form onSubmit={handleSubmit} className="">
+            <Row>
+                <Col className="mt-3"></Col>
+            </Row>
+            <Row className="mb-2 mt-5">
+                <Col sm={{offset: 2}} md={{offset: 4}} className="fs-5 fw-bold">Register:</Col>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterUsername">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterUsername">
                     <Form.Label>
                         Username:
                         <Form.Control
@@ -61,7 +64,7 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterPassword">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterPassword">
                     <Form.Label>
                         Password:
                         <Form.Control
@@ -76,7 +79,7 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterControlPassword">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterControlPassword">
                     <Form.Label>
                         Enter password again:
                         <Form.Control
@@ -91,7 +94,7 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterEmail">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterEmail">
                     <Form.Label>
                         Email:
                         <Form.Control
@@ -106,7 +109,7 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterBirthday">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterBirthday">
                     <Form.Label>
                         Birthday:
                         <Form.Control
@@ -120,12 +123,12 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Col xs={{offset: 4}} className="mt-2">
+                <Col sm={{offset: 2}} md={{offset: 4}} className="mt-2">
                     <Button variant="primary" type="submit">Submit</Button>
                 </Col>
             </Row>
             <Row>    
-                <Col xs={{span: 3, offset: 4}} className="mt-4">
+                <Col sm={{offset: 2}} md={{offset: 4}} className="mt-4">
                     <Link to={`/login`}>
                         I already have an account.
                     </Link>

@@ -64,19 +64,19 @@ const similarMovies= movieData.filter((m) => Movie.Genre.Name === m.Genre.Name);
         </Col>
       </Row>
       <Row>
-      { similarMovies.map((similarMovie) => (
-        similarMovie._id === Movie._id ? (
-          <Col className="d-none"></Col>
-        ) : (
-        <Col key={similarMovie._id}>
-          <MovieCard 
-            movieData={similarMovie}
-            storedUser={storedUser}
-            storedToken={storedToken}
-          />
-        </Col>
-        )
-         ))}
+        { similarMovies.map((similarMovie) => (
+          similarMovie._id === Movie._id ? (
+            <Col className="d-none" key="none"></Col>
+          ) : (
+          <Col key={similarMovie._id}>
+            <MovieCard
+              movieData={similarMovie}
+              storedUser={storedUser}
+              storedToken={storedToken}
+            />
+          </Col>
+          )
+          ))}
       </Row>
     </>
   )
