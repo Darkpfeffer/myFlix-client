@@ -27,17 +27,17 @@ export const MainView= () => {
   const [user, setUser]= useState(null);
   const [token, setToken]= useState(null);
 
-  if (user) {
-    var favoriteMovieList= movie.filter((m) => user.FavoriteMovies.includes(m._id));
+  if (storedUser) {
+    var favoriteMovieList= movie.filter((m) => storedUser.FavoriteMovies.includes(m._id));
   }
 
   useEffect(() => {
-    if(!token && !(storedUser && storedToken)) {
+    if(!(storedUser && storedToken)) {
       return;
     }
 
     fetch("https://myflix-5sws.onrender.com/movies", {
-      headers: { Authorization: `Bearer ${token}`}
+      headers: { Authorization: `Bearer ${storedToken}`}
     })
       .then((res) => res.json())
       .then((data) => {
@@ -56,19 +56,19 @@ export const MainView= () => {
         
         setMovie(moviesFromApi);
       });
-  }, [token]);
+  }, [storedToken]);
 
   return (
     <BrowserRouter>
       <Row>
         <Col>
           <NavigationBar
-            user={user}
-            token={token}
+            storedUser={storedUser}
             onLoggedOut={() =>{
-              setUser(null);
+              setUser(null)
               setToken(null);
               localStorage.clear();
+              window.location.reload();
             }}
           />
         </Col>
@@ -79,9 +79,9 @@ export const MainView= () => {
               path="/"
               element={
                 <>
-                  { user && movie.length === 0 ? (
+                  { storedUser && movie.length === 0 ? (
                     <Col>The list is empty!</Col>
-                  ) : user ? (
+                  ) : storedUser ? (
                     movie.map((Movie) => (
                       <Col xs={2} key={Movie._id}>
                         <MovieCard 
@@ -101,9 +101,9 @@ export const MainView= () => {
               path="/movies/:movieId"
               element={
                 <>
-                  {user && movie.length === 0 ? (
+                  {storedUser && movie.length === 0 ? (
                     <Col>The list is empty!</Col>
-                  ) : user ? (
+                  ) : storedUser ? (
                     <Col xs={12}>
                       <MovieView movieData={movie} />
                     </Col>
@@ -117,7 +117,7 @@ export const MainView= () => {
               path="/login"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Navigate to="/" replace/>
                   ) : (
                       <Col xs={12}>
@@ -134,7 +134,7 @@ export const MainView= () => {
               path="/signup"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Navigate to="/" replace/>
                   ) : (
                     <Col>
@@ -148,7 +148,7 @@ export const MainView= () => {
               path="/users"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                       <Col>
                         <ProfileView
                           storedUser={storedUser} 
@@ -167,7 +167,7 @@ export const MainView= () => {
               path="/users/settings"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Col>
                       <ProfileSettingsView />
                     </Col>
@@ -181,14 +181,16 @@ export const MainView= () => {
               path="/users/settings/password"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Col>
                       <ProfilePasswordSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
                         onChanging={() => {
                           setUser(null),
-                          setToken(null)
+                          setToken(null),
+                          localStorage.clear();
+                          window.location.reload();
                         }}
                       />
                     </Col>
@@ -202,14 +204,16 @@ export const MainView= () => {
               path="/users/settings/username"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Col>
                       <ProfileUsernameSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
                         onChanging={() => {
                           setUser(null),
-                          setToken(null)
+                          setToken(null),
+                          localStorage.clear();
+                          window.location.reload();
                         }}
                       />
                     </Col>
@@ -223,14 +227,16 @@ export const MainView= () => {
               path="/users/settings/email"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Col>
                       <ProfileEmailSettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
                         onChanging={() => {
                           setUser(null),
-                          setToken(null)
+                          setToken(null),
+                          localStorage.clear();
+                          window.location.reload();
                         }}
                       />
                     </Col>
@@ -244,14 +250,16 @@ export const MainView= () => {
               path="/users/settings/birthday"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Col>
                       <ProfileBirthdaySettings 
                         storedUser={storedUser} 
                         storedToken={storedToken}
                         onChanging={() => {
                           setUser(null),
-                          setToken(null)
+                          setToken(null),
+                          localStorage.clear();
+                          window.location.reload();
                         }}
                       />
                     </Col>
@@ -265,14 +273,16 @@ export const MainView= () => {
               path="/users/settings/delete"
               element={
                 <>
-                  { user ? (
+                  { storedUser ? (
                     <Col>
                       <ProfileDeleteView 
                         storedUser={storedUser} 
                         storedToken={storedToken}
                         onDelete={() => {
                           setUser(null),
-                          setToken(null)
+                          setToken(null),
+                          localStorage.clear();
+                          window.location.reload();
                         }}
                       />
                     </Col>

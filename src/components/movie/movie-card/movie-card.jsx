@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 //importing Bootstrap comtonents
-import Card from "react-bootstrap/Card";
+import {Col, Card} from "react-bootstrap";
 
 //importing project components
 import { FavoriteButton } from "../favorite-button/favorite-button";
@@ -18,9 +18,18 @@ export const MovieCard= ({ movieData, storedUser, storedToken }) => {
       <Card
         className="text-bg-dark border-secondary rounded"
       >
+          <Col className="text-end">
+            <FavoriteButton 
+              storedUser={storedUser} 
+              storedToken={storedToken} 
+              movieData={movieData}
+            />
+          </Col>
           <Card.Img className="px-3 pt-3" src={movieData.ImageURL}/>
           <Card.Body>
-            <Card.Title className="fw-bold">{movieData.Title} ({movieData.Release_date}) <FavoriteButton storedUser={storedUser} storedToken={storedToken} movieData={movieData}/></Card.Title>
+            <Card.Title className="fw-bold">
+              {movieData.Title} ({movieData.Release_date})              
+            </Card.Title>
             <Card.Text 
               className="fw-semibold border-top border-bottom border-secondary"
             >

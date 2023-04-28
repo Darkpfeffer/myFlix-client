@@ -4,14 +4,14 @@ import { Link } from "react-router-dom"
 //Import React Bootstrap
 import {Nav, Navbar} from "react-bootstrap";
 
-export const NavigationBar = ({user, onLoggedOut}) => {
+export const NavigationBar = ({storedUser, onLoggedOut}) => {
     return (
         <Navbar bg="primary" variant="dark" expand="lg" className="mx-0">
             <Navbar.Brand as={Link} to="/">MyFlix</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    {!user && (
+                    {!storedUser && (
                         <>
                             <Nav.Link as={Link} to={`/`} className="navbar-link">
                             Home
@@ -20,7 +20,7 @@ export const NavigationBar = ({user, onLoggedOut}) => {
                             <Nav.Link as={Link} to={`/signup`}>Sign Up</Nav.Link>
                         </>
                     )}
-                    {user && (
+                    {storedUser && (
                         <>
                             <Nav.Link as={Link} to={`/`} className="navbar-link">
                             Home
