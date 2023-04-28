@@ -25,8 +25,9 @@ export const MovieCard= ({ movieData, storedUser, storedToken }) => {
               movieData={movieData}
             />
           </Col>
+          <Link to={`/movies/${movieData._id}`} className="movie-card">
           <Card.Img className="px-3 pt-3" src={movieData.ImageURL}/>
-          <Card.Body>
+          <Card.Body >
             <Card.Title className="fw-bold">
               {movieData.Title} ({movieData.Release_date})              
             </Card.Title>
@@ -44,11 +45,9 @@ export const MovieCard= ({ movieData, storedUser, storedToken }) => {
               className="border-top border-bottom border-secondary"
             >
               {movieData.Description}
-            </Card.Text>
-            <Link to={`/movies/${movieData._id}`} className="movie-card">
-              <Card.Text>Open the movie</Card.Text>
-            </Link>
+            </Card.Text>           
           </Card.Body>
+          </Link>
       </Card>
     
   )
