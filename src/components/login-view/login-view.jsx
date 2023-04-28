@@ -76,12 +76,13 @@ export const LoginView= ({ onLoggedIn }) => {
                 <Col xs={{offset: 4}} className="mt-2">
                     <Button variant="primary" type="submit" className="align-self-center">Submit</Button>
                 </Col>
-                <Col xs={3}>
+            </Row>
+            <Row>
+                <Col xs={{span: 3, offset:4 }} className="mt-4">
                     <Link to={`/signup`}>
                         I don't have and account.
                     </Link>
                 </Col>
-                <Col xs={{offset: 2}}></Col>
             </Row>
         </Form>
     )
