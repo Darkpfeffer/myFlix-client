@@ -105,7 +105,11 @@ export const MainView= () => {
                     <Col>The list is empty!</Col>
                   ) : storedUser ? (
                     <Col xs={12}>
-                      <MovieView movieData={movie} />
+                      <MovieView
+                        movieData={movie} 
+                        storedUser={storedUser}
+                        storedToken={storedToken}
+                      />
                     </Col>
                   ) : (
                     <Navigate to="/login" replace/>

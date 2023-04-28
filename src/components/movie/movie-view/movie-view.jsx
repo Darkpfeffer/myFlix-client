@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 // Import Bootstrap components
 import {Row, Col, Button} from "react-bootstrap"
 
-export const MovieView= ({ movieData }) => {
+//Import self made components
+import { FavoriteButton } from "../favorite-button/favorite-button";
+
+export const MovieView= ({ storedUser, storedToken, movieData }) => {
 const { movieId } = useParams();
 
 const Movie = movieData.find((movie) => movie._id === movieId);
@@ -13,7 +16,14 @@ const Movie = movieData.find((movie) => movie._id === movieId);
   return(
     <>
       <Row>
-        <Col sm={{offset: 11}}>
+        <Col>
+          <FavoriteButton 
+            storedUser={storedUser} 
+            storedToken={storedToken} 
+            movieData={Movie}
+          />
+        </Col>
+        <Col sm={{offset: 10}}>
           <Link to={`/`}>
             <Button>Back</Button>
           </Link>
