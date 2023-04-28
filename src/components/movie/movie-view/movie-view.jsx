@@ -7,11 +7,14 @@ import {Row, Col, Button} from "react-bootstrap"
 
 //Import self made components
 import { FavoriteButton } from "../favorite-button/favorite-button";
+import { MovieCard } from "../movie-card/movie-card";
 
 export const MovieView= ({ storedUser, storedToken, movieData }) => {
 const { movieId } = useParams();
 
 const Movie = movieData.find((movie) => movie._id === movieId);
+const similarMovies= movieData.filter((m) => Movie.Genre.Name === m.Genre.Name);
+
 
   return(
     <>
@@ -54,6 +57,26 @@ const Movie = movieData.find((movie) => movie._id === movieId);
       </Row>
       <Row>
         <Col className="d-flex justify-content-center mt-4"><img src={Movie.ImageURL} className="movie_image"/></Col>
+      </Row>
+      <Row>
+        <Col className="fs-2">
+          Similar Movies:
+        </Col>
+      </Row>
+      <Row>
+      { similarMovies.map((similarMovie) => (
+        similarMovie._id === Movie._id ? (
+          <Col className="d-none"></Col>
+        ) : (
+        <Col key={similarMovie._id}>
+          <MovieCard 
+            movieData={similarMovie}
+            storedUser={storedUser}
+            storedToken={storedToken}
+          />
+        </Col>
+        )
+         ))}
       </Row>
     </>
   )

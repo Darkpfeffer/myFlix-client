@@ -27,6 +27,7 @@ export const MainView= () => {
   const [user, setUser]= useState(null);
   const [token, setToken]= useState(null);
 
+  //variables for favorite list and similar movies
   if (storedUser) {
     var favoriteMovieList= movie.filter((m) => storedUser.FavoriteMovies.includes(m._id));
   }
