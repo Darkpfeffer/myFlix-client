@@ -7,7 +7,7 @@ import {Row, Col} from "react-bootstrap";
 //import components
 import { MovieCard } from "../../movie/movie-card/movie-card";
 
-export const ProfileView = ({storedUser, favoriteMovies}) => {
+export const ProfileView = ({storedUser, favoriteMovies, storedToken}) => {
     return (
         <>
             <Row>
@@ -47,7 +47,7 @@ export const ProfileView = ({storedUser, favoriteMovies}) => {
             <Row>
                 {favoriteMovies.map((movie) => (
                     <Col key={movie._id}>
-                        <MovieCard movieData={movie}/>
+                        <MovieCard movieData={movie} storedUser={storedUser} storedToken={storedToken}/>
                     </Col>
                 ))}
             </Row>

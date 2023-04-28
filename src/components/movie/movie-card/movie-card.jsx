@@ -5,19 +5,22 @@ import { Link } from "react-router-dom";
 //importing Bootstrap comtonents
 import Card from "react-bootstrap/Card";
 
+//importing project components
+import { FavoriteButton } from "../favorite-button/favorite-button";
+
 //import self scss
 import "./movie-card.scss";
 
 //export and logic
-export const MovieCard= ({ movieData }) => {
+export const MovieCard= ({ movieData, storedUser, storedToken }) => {
   return (
-    <Link to={`/movies/${movieData._id}`} className="movie-card">
+    
       <Card
         className="text-bg-dark border-secondary rounded"
       >
           <Card.Img className="px-3 pt-3" src={movieData.ImageURL}/>
           <Card.Body>
-            <Card.Title className="fw-bold">{movieData.Title} ({movieData.Release_date})</Card.Title>
+            <Card.Title className="fw-bold">{movieData.Title} ({movieData.Release_date}) <FavoriteButton storedUser={storedUser} storedToken={storedToken} movieData={movieData}/></Card.Title>
             <Card.Text 
               className="fw-semibold border-top border-bottom border-secondary"
             >
@@ -33,9 +36,12 @@ export const MovieCard= ({ movieData }) => {
             >
               {movieData.Description}
             </Card.Text>
+            <Link to={`/movies/${movieData._id}`} className="movie-card">
+              <Card.Text>Open the movie</Card.Text>
+            </Link>
           </Card.Body>
       </Card>
-    </Link>
+    
   )
 };
 

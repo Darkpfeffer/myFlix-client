@@ -7,7 +7,7 @@ import {Row, Col, Button} from "react-bootstrap"
 // Import components from the project
 import { NavigationBar } from '../navigation-bar/navigation-bar';
 import {MovieCard} from "../movie/movie-card/movie-card";
-import {MovieView} from "../movie-view/movie-view";
+import {MovieView} from "../movie/movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 
@@ -83,8 +83,12 @@ export const MainView= () => {
                     <Col>The list is empty!</Col>
                   ) : user ? (
                     movie.map((Movie) => (
-                      <Col xs={12} key={Movie._id}>
-                        <MovieCard movieData={Movie}/>
+                      <Col xs={2} key={Movie._id}>
+                        <MovieCard 
+                          movieData={Movie} 
+                          storedUser={storedUser}
+                          storedToken={storedToken}
+                        />
                       </Col>
                     ))
                   ) : (
@@ -146,7 +150,11 @@ export const MainView= () => {
                 <>
                   { user ? (
                       <Col>
-                        <ProfileView storedUser={storedUser} favoriteMovies={favoriteMovieList}/>
+                        <ProfileView
+                          storedUser={storedUser} 
+                          favoriteMovies={favoriteMovieList} 
+                          storedToken={storedToken}
+                        />
                       </Col>
                   ) : (
                     <Navigate to="/login" replace/>
