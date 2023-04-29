@@ -18,7 +18,7 @@ const similarMovies= movieData.filter((m) => Movie.Genre.Name === m.Genre.Name);
 
   return(
     <>
-      <Row>
+      <Row className="mt-3">
         <Col>
           <FavoriteButton 
             storedUser={storedUser} 
@@ -68,7 +68,7 @@ const similarMovies= movieData.filter((m) => Movie.Genre.Name === m.Genre.Name);
           similarMovie._id === Movie._id ? (
             <Col className="d-none" key="none"></Col>
           ) : (
-          <Col key={similarMovie._id}>
+          <Col xs={12} md={6} lg={4} xl={3} xxl={2} key={similarMovie._id}>
             <MovieCard
               movieData={similarMovie}
               storedUser={storedUser}

@@ -41,10 +41,7 @@ export const SignupView= () => {
 
     return (
         <Form onSubmit={handleSubmit} className="">
-            <Row>
-                <Col className="mt-3"></Col>
-            </Row>
-            <Row className="mb-2 mt-5">
+            <Row className="mb-2 mt-3">
                 <Col sm={{offset: 2}} md={{offset: 4}} className="fs-5 fw-bold">Register:</Col>
             </Row>
             <Row>

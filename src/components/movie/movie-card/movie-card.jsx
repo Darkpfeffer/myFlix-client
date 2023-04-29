@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 //importing Bootstrap comtonents
-import {Col, Card} from "react-bootstrap";
+import {Row, Col, Card} from "react-bootstrap";
 
 //importing project components
 import { FavoriteButton } from "../favorite-button/favorite-button";
@@ -14,9 +14,12 @@ import "./movie-card.scss";
 //export and logic
 export const MovieCard= ({ movieData, storedUser, storedToken }) => {
   return (
-    
+      <>
+      <Row>
+      <Col></Col>
+      </Row>
       <Card
-        className="text-bg-dark border-secondary rounded"
+        className="text-bg-dark border-secondary rounded mt-3"
       >
           <Col className="text-end">
             <FavoriteButton 
@@ -49,7 +52,7 @@ export const MovieCard= ({ movieData, storedUser, storedToken }) => {
           </Card.Body>
           </Link>
       </Card>
-    
+      </>
   )
 };
 

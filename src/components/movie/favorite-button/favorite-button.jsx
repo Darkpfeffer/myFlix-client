@@ -8,7 +8,7 @@ import fullHeartIcon from "../../../img/heart-icon-full.svg"
 //import self css
 import "./favorite-button.scss"
 
-export const FavoriteButton= ({ storedUser, storedToken, movieData, Movie}) => {
+export const FavoriteButton= ({ storedUser, storedToken, movieData}) => {
    
     const handleClick = (event) => {
         event.preventDefault()
@@ -40,7 +40,7 @@ export const FavoriteButton= ({ storedUser, storedToken, movieData, Movie}) => {
     return (
         <Col>
             {storedUser.FavoriteMovies.includes(movieData._id) ? (
-                <Button onClick={handleClick} variant="secondary"><img src={fullHeartIcon} alt="Heart icon" className="heart-logo"/></Button>
+                <Button onClick={handleClick} variant="secondary" className="heart-button"><img src={fullHeartIcon} alt="Heart icon" className="heart-logo"/></Button>
             ): (
                 <Button onClick={handleClick} variant="secondary"><img src={heartIcon} alt="Heart icon" className="heart-logo"/></Button>
             )}

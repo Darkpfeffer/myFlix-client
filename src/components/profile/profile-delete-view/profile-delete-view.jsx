@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 //import react-bootstrap
-import {Form, Button, FormGroup} from "react-bootstrap";
+import {Form, Button, FormGroup, Row, Col} from "react-bootstrap";
 
 export const ProfileDeleteView = ({storedUser, storedToken, onDelete}) => {
     const [controlUsername, setControlUsername] = useState("");
@@ -27,19 +27,29 @@ export const ProfileDeleteView = ({storedUser, storedToken, onDelete}) => {
     }
 
     return(
-        <Form onSubmit={handleSubmit}>
-            <FormGroup controlId="fromControlDelete">
-                <Form.Label>Enter your username to delete account:</Form.Label>
-                <Form.Control 
-                    className="text-bg-dark"
-                    type="text"
-                    value={controlUsername}
-                    onChange={(e) => setControlUsername(e.target.value)}
-                    required
-                    placeholder="Enter your username"
-                />
-            </FormGroup>
-            <Button variant="primary" type="submit">Submit</Button>
+        <Form onSubmit={handleSubmit} className="mt-2">
+            <Row>
+                <Col sm={{offset: 2}} md={{offset: 4}} className="fw-bold fs-5 align-self-center mb-3">Delete account: </Col>
+            </Row>
+            <Row className="mb-3">
+                <FormGroup controlId="fromControlDelete" as={Col} sm={{offset: 2}} md={{offset: 4}}>
+                    <Form.Label>Enter your username:</Form.Label>
+                    <Form.Control 
+                        className="text-bg-dark"
+                        type="text"
+                        value={controlUsername}
+                        onChange={(e) => setControlUsername(e.target.value)}
+                        required
+                        placeholder="Enter your username"
+                    />
+                </FormGroup>
+                <Col sm={{offset: 1}} md={{offset: 3}} className="desktop desktop-long"></Col>
+            </Row>
+            <Row className="mb-3">
+                <Col sm={{offset: 2}} md={{offset: 4}} >
+                    <Button variant="primary" type="submit">Submit</Button>
+                </Col>
+            </Row>
         </Form>
     )
 }

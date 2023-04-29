@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 //import react bootstrap
-import {Form, Button, FormGroup} from "react-bootstrap"
+import {Form, Button, FormGroup, Col, Row} from "react-bootstrap"
 
 export const ProfileUsernameSettings = ({ storedUser, storedToken, onChanging }) => {
 const [username, setUsername] = useState("");
@@ -53,52 +53,67 @@ const [controlPassword, setControlPassword] = useState("");
    
     }
     return (
-        <Form onSubmit={handleSubmit}>
-            <FormGroup controlId="formNewUsername">
-                <Form.Label>New username:</Form.Label>
-                <Form.Control
-                    className="text-bg-dark"
-                    type="text" 
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    minLength="5"
-                    required
-                    placeholder="Enter new username" 
-                />
-            </FormGroup>
-            <FormGroup controlId="formControlUsername">
-                <Form.Label>Enter new username again:</Form.Label>
-                <Form.Control 
-                    className="text-bg-dark"
-                    type="text"
-                    value={controlUsername}
-                    onChange={(e) => setControlUsername(e.target.value)}
-                    placeholder="Enter new username again"
-                />
-            </FormGroup>
-
-            <FormGroup controlId="formNewPassword2">
-                <Form.Label>New Password:</Form.Label>
-                <Form.Control
-                    className="text-bg-dark"
-                    type="password" 
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    placeholder="Enter new password" 
-                />
-            </FormGroup>
-            <FormGroup controlId="formControlPassword2">
-                <Form.Label>Enter new password again:</Form.Label>
-                <Form.Control 
-                    className="text-bg-dark"
-                    type="password"
-                    value={controlPassword}
-                    onChange={(e) => setControlPassword(e.target.value)}
-                    placeholder="Enter new password again"
-                />
-            </FormGroup>
-            <Button variant="primary" type="submit">Submit</Button>
+        <Form onSubmit={handleSubmit} className="mt-2">
+            <Row className="mb-3">
+                <FormGroup controlId="formNewUsername" as={Col} sm={{offset: 2}} md={{offset: 4}}>
+                    <Form.Label>New username:</Form.Label>
+                    <Form.Control
+                        className="text-bg-dark"
+                        type="text" 
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        minLength="5"
+                        required
+                        placeholder="Enter new username" 
+                    />
+                </FormGroup>
+                <Col sm={{offset: 2}} md={{offset: 3}} className="desktop"></Col>
+            </Row>
+            <Row className="mb-3">
+                <FormGroup controlId="formControlUsername" as={Col} sm={{offset: 2}} md={{offset: 4}}>
+                    <Form.Label>Enter new username again:</Form.Label>
+                    <Form.Control 
+                        className="text-bg-dark"
+                        type="text"
+                        value={controlUsername}
+                        onChange={(e) => setControlUsername(e.target.value)}
+                        placeholder="Enter new username again"
+                    />
+                </FormGroup>
+                <Col sm={{offset: 1}} md={{offset: 3}} className="desktop desktop-long"></Col>
+            </Row>
+            <Row className="mb-3">
+                <FormGroup controlId="formNewPassword2" as={Col} sm={{offset: 2}} md={{offset: 4}}>
+                    <Form.Label>New Password:</Form.Label>
+                    <Form.Control
+                        className="text-bg-dark"
+                        type="password" 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        placeholder="Enter new password" 
+                    />
+                </FormGroup>
+                <Col sm={{offset: 2}} md={{offset: 3}} className="desktop"></Col>
+            </Row>
+            <Row className="mb-3">
+                <FormGroup controlId="formControlPassword2" as={Col} sm={{offset: 2}} md={{offset: 4}}>
+                    <Form.Label>Enter new password again:</Form.Label>
+                    <Form.Control 
+                        className="text-bg-dark"
+                        type="password"
+                        value={controlPassword}
+                        onChange={(e) => setControlPassword(e.target.value)}
+                        placeholder="Enter new password again"
+                    />
+                </FormGroup>
+                <Col sm={{offset: 1}} md={{offset: 3}} className="desktop desktop-long"></Col>
+            </Row>
+            <Row className="mb-3">
+                <Col sm={{offset: 2}} md={{offset: 4}} >
+                    <Button variant="primary" type="submit">Submit</Button>
+                </Col>
+            </Row>
         </Form>
     )
 }

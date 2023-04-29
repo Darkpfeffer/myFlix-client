@@ -75,6 +75,9 @@ export const MainView= () => {
         </Col>
       </Row>
       <Row>
+        <Col className="mt-5"></Col>
+      </Row>
+      <Row>
         <Routes>
             <Route
               path="/"
@@ -84,7 +87,7 @@ export const MainView= () => {
                     <Col>The list is empty!</Col>
                   ) : storedUser ? (
                     movie.map((Movie) => (
-                      <Col xs={2} key={Movie._id}>
+                      <Col xs={12} md={6} lg={4} xl={3} xxl={2} key={Movie._id}>
                         <MovieCard 
                           movieData={Movie} 
                           storedUser={storedUser}

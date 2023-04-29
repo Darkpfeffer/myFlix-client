@@ -38,7 +38,7 @@ export const LoginView= ({ onLoggedIn }) => {
         });
     }
     return (
-        <Form onSubmit={handleSubmit} className="mb-5 mt-5" variant="dark">
+        <Form onSubmit={handleSubmit} variant="dark">
             <Row>
                 <Col sm={{offset: 2}} md={{offset: 4}} className="fw-bold fs-5 align-self-center mb-2 mt-4">Login: </Col>
             </Row>
