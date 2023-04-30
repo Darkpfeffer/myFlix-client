@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // import bootstrap components
 import {Form, Button, Row, Col} from "react-bootstrap"
@@ -37,15 +38,16 @@ export const LoginView= ({ onLoggedIn }) => {
         });
     }
     return (
-        <Form onSubmit={handleSubmit} className="mb-5" >
+        <Form onSubmit={handleSubmit} variant="dark">
             <Row>
-                <Col xs={{offset: 4}} className="fw-bold fs-5 align-self-center mb-2 mt-4">Login: </Col>
+                <Col sm={{offset: 2}} md={{offset: 4}} className="fw-bold fs-5 align-self-center mb-2 mt-4">Login: </Col>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formUsername">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formUsername">
                     <Form.Label>
                         Username:
                         <Form.Control
+                            className="text-bg-dark"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -56,10 +58,11 @@ export const LoginView= ({ onLoggedIn }) => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formPassword">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formPassword">
                     <Form.Label>
                         Password:
                         <Form.Control 
+                            className="text-bg-dark"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -70,8 +73,15 @@ export const LoginView= ({ onLoggedIn }) => {
                 </Form.Group>
             </Row>
             <Row>
-                <Col xs={{offset: 4}} className="mt-2">
+                <Col sm={{offset: 2}} md={{offset: 4}} className="mt-2">
                     <Button variant="primary" type="submit" className="align-self-center">Submit</Button>
+                </Col>
+            </Row>
+            <Row>
+                <Col sm={{offset: 2}} md={{offset: 4}} className="mt-4">
+                    <Link to={`/signup`}>
+                        I don't have and account.
+                    </Link>
                 </Col>
             </Row>
         </Form>

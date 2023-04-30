@@ -1,4 +1,5 @@
 import { useState} from "react";
+import { Link} from "react-router-dom";
 
 // import bootstrap components
 import {Form, Button, Row, Col} from "react-bootstrap"
@@ -6,6 +7,7 @@ import {Form, Button, Row, Col} from "react-bootstrap"
 export const SignupView= () => {
     const [username, setUsername]= useState("");
     const [password, setPassword]= useState("");
+    const [controlPassword, setControlPassword]= useState("")
     const [email, setEmail]= useState("");
     const [birthday, setBirthday]= useState("");
 
@@ -28,7 +30,7 @@ export const SignupView= () => {
         }).then((res) => {
             if (res.ok) {
                 alert("Signup successful");
-                window.location.reload();
+                window.location.replace("/login");
             } else {
                 alert("Signup failed");
             }
@@ -38,15 +40,16 @@ export const SignupView= () => {
     };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Row className="mb-2">
-                <Col xs={{offset: 4}} className="fs-5 fw-bold">or Register:</Col>
+        <Form onSubmit={handleSubmit} className="">
+            <Row className="mb-2 mt-3">
+                <Col sm={{offset: 2}} md={{offset: 4}} className="fs-5 fw-bold">Register:</Col>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterUsername">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterUsername">
                     <Form.Label>
                         Username:
                         <Form.Control
+                            className="text-bg-dark"
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
@@ -58,10 +61,11 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterPassword">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterPassword">
                     <Form.Label>
                         Password:
                         <Form.Control
+                            className="text-bg-dark"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -72,10 +76,26 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterEmail">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterControlPassword">
+                    <Form.Label>
+                        Enter password again:
+                        <Form.Control
+                            className="text-bg-dark"
+                            type="password"
+                            value={controlPassword}
+                            onChange={(e) => setControlPassword(e.target.value)}
+                            required
+                            placeholder="Enter your password again"
+                        />
+                    </Form.Label>
+                </Form.Group>
+            </Row>
+            <Row>
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterEmail">
                     <Form.Label>
                         Email:
                         <Form.Control
+                            className="text-bg-dark"
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -86,10 +106,11 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Form.Group as={Col} xs={{offset: 4}} controlId="formRegisterBirthday">
+                <Form.Group as={Col} sm={{offset: 2}} md={{offset: 4}} controlId="formRegisterBirthday">
                     <Form.Label>
                         Birthday:
                         <Form.Control
+                            className="text-bg-dark"
                             type="date"
                             value={birthday}
                             onChange={(e) => setBirthday(e.target.value)}
@@ -99,8 +120,15 @@ export const SignupView= () => {
                 </Form.Group>
             </Row>
             <Row>
-                <Col xs={{offset: 4}} className="mt-2">
+                <Col sm={{offset: 2}} md={{offset: 4}} className="mt-2">
                     <Button variant="primary" type="submit">Submit</Button>
+                </Col>
+            </Row>
+            <Row>    
+                <Col sm={{offset: 2}} md={{offset: 4}} className="mt-4">
+                    <Link to={`/login`}>
+                        I already have an account.
+                    </Link>
                 </Col>
             </Row>
         </Form>

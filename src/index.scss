@@ -6,21 +6,36 @@ $font-size-base: 0.9rem;
 
 //Styling
 
+.desktop, .desktop-long {
+  display: inherit;
+}
+
 .movie_image {
   width: 350px;
 }
 
-.mobile {
+.mobile, .xs {
   display: none;
 }
 
-#formUsername, #formPassword, #formRegisterUsername, #formRegisterPassword, #formRegisterEmail, #formRegisterBirthday{
+.form-input {
   background-color: whitesmoke;
+  color: whitesmoke;
 }
 
 @media all and (max-width: 575px) {
   .movie_image {
     min-width: 120px;
+  }
+
+  .xs {
+    display: inherit;
+  }
+}
+
+@media all and (max-width: 390px) {
+  .desktop-long {
+    display: none
   }
 }
 
@@ -29,8 +44,18 @@ $font-size-base: 0.9rem;
     font-size: 0.8rem;
   }
 
+  .desktop {
+    display: none;
+  }
+
   .mobile {
     display: inherit;
+  }
+}
+
+@media all and (min-width: 1400px) {
+  .movie_image {
+    width:500px;
   }
 }
 
