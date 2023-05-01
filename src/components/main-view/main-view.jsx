@@ -117,7 +117,9 @@ export const MainView= () => {
               element={
                 <>
                   {user && movie.length === 0 ? (
-                    <Col>The list is empty!</Col>
+                    <Col sm={{offset: 2}} md={{offset: 4}} className="fw-bold fs-5 align-self-center mb-2 mt-4">
+                      The list is empty!
+                    </Col>
                   ) : user ? (
                     <Col xs={12}>
                       <MovieView
