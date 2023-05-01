@@ -4,13 +4,13 @@ import { useState } from "react";
 //import react-bootstrap
 import {Form, Button, FormGroup, Row, Col} from "react-bootstrap";
 
-export const ProfileDeleteView = ({storedUser, storedToken, onDelete}) => {
+export const ProfileDeleteView = ({user, token, onDelete}) => {
     const [controlUsername, setControlUsername] = useState("");
     const handleSubmit = (event) => {
         event.preventDefault()
-        if (controlUsername === storedUser.Username) {
-            fetch(`https://myflix-5sws.onrender.com/users/${storedUser._id}`, {
-                headers: { Authorization: `Bearer ${storedToken}` },
+        if (controlUsername === user.Username) {
+            fetch(`https://myflix-5sws.onrender.com/users/${user._id}`, {
+                headers: { Authorization: `Bearer ${token}` },
                 method: "DELETE"
             }).then((result) => {
                 alert (`Account is successfully deleted`)

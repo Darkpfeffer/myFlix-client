@@ -24,21 +24,31 @@ export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
   const storedToken= localStorage.getItem("token");
   const [movie, setMovie] = useState([]);
+  const [favoriteMovie, setFavoriteMovie] = useState([])
   const [user, setUser]= useState(null);
   const [token, setToken]= useState(null);
 
+  if(!user && storedUser) {
+    setFavoriteMovie(storedUser.FavoriteMovies)
+  }
+
+  if (!user && storedUser) {
+    setUser(storedUser);
+    setToken(storedToken);
+  }
+
   //variables for favorite list and similar movies
-  if (storedUser) {
-    var favoriteMovieList= movie.filter((m) => storedUser.FavoriteMovies.includes(m._id));
+  if (user) {
+    var favoriteMovieList= movie.filter((m) => favoriteMovie.includes(m._id));
   }
 
   useEffect(() => {
-    if(!(storedUser && storedToken)) {
+    if(!(user && token)) {
       return;
     }
 
     fetch("https://myflix-5sws.onrender.com/movies", {
-      headers: { Authorization: `Bearer ${storedToken}`}
+      headers: { Authorization: `Bearer ${token}`}
     })
       .then((res) => res.json())
       .then((data) => {
@@ -57,14 +67,14 @@ export const MainView= () => {
         
         setMovie(moviesFromApi);
       });
-  }, [storedToken]);
+  }, [token]);
 
   return (
     <BrowserRouter>
       <Row>
         <Col>
           <NavigationBar
-            storedUser={storedUser}
+            user={user}
             onLoggedOut={() =>{
               setUser(null)
               setToken(null);
@@ -83,15 +93,16 @@ export const MainView= () => {
               path="/"
               element={
                 <>
-                  { storedUser && movie.length === 0 ? (
+                  { user && movie.length === 0 ? (
                     <Col>The list is empty!</Col>
-                  ) : storedUser ? (
+                  ) : user ? (
                     movie.map((Movie) => (
                       <Col xs={12} md={6} lg={4} xl={3} xxl={2} key={Movie._id}>
                         <MovieCard 
                           movieData={Movie} 
-                          storedUser={storedUser}
-                          storedToken={storedToken}
+                          user={user}
+                          token={token}
+                          favoriteMovies={favoriteMovie}
                         />
                       </Col>
                     ))
@@ -105,14 +116,15 @@ export const MainView= () => {
               path="/movies/:movieId"
               element={
                 <>
-                  {storedUser && movie.length === 0 ? (
+                  {user && movie.length === 0 ? (
                     <Col>The list is empty!</Col>
-                  ) : storedUser ? (
+                  ) : user ? (
                     <Col xs={12}>
                       <MovieView
                         movieData={movie} 
-                        storedUser={storedUser}
-                        storedToken={storedToken}
+                        user={user}
+                        token={token}
+                        favoriteMovies={favoriteMovie}
                       />
                     </Col>
                   ) : (
@@ -132,6 +144,7 @@ export const MainView= () => {
                         <LoginView onLoggedIn={(user, token) => {
                           setUser(user);
                           setToken(token);
+                          setFavoriteMovie(user.FavoriteMovies)
                           }} />
                       </Col>
                   )}
@@ -142,7 +155,7 @@ export const MainView= () => {
               path="/signup"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Navigate to="/" replace/>
                   ) : (
                     <Col>
@@ -156,12 +169,13 @@ export const MainView= () => {
               path="/users"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                       <Col>
                         <ProfileView
-                          storedUser={storedUser} 
-                          favoriteMovies={favoriteMovieList} 
-                          storedToken={storedToken}
+                          user={user} 
+                          favoriteMovieList={favoriteMovieList} 
+                          token={token}
+                          favoriteMovies={favoriteMovie}
                         />
                       </Col>
                   ) : (
@@ -175,7 +189,7 @@ export const MainView= () => {
               path="/users/settings"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Col>
                       <ProfileSettingsView />
                     </Col>
@@ -189,11 +203,11 @@ export const MainView= () => {
               path="/users/settings/password"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Col>
                       <ProfilePasswordSettings 
-                        storedUser={storedUser} 
-                        storedToken={storedToken}
+                        user={user} 
+                        token={token}
                         onChanging={() => {
                           setUser(null),
                           setToken(null),
@@ -212,11 +226,11 @@ export const MainView= () => {
               path="/users/settings/username"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Col>
                       <ProfileUsernameSettings 
-                        storedUser={storedUser} 
-                        storedToken={storedToken}
+                        user={user} 
+                        token={token}
                         onChanging={() => {
                           setUser(null),
                           setToken(null),
@@ -235,11 +249,11 @@ export const MainView= () => {
               path="/users/settings/email"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Col>
                       <ProfileEmailSettings 
-                        storedUser={storedUser} 
-                        storedToken={storedToken}
+                        user={user} 
+                        token={token}
                         onChanging={() => {
                           setUser(null),
                           setToken(null),
@@ -258,11 +272,11 @@ export const MainView= () => {
               path="/users/settings/birthday"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Col>
                       <ProfileBirthdaySettings 
-                        storedUser={storedUser} 
-                        storedToken={storedToken}
+                        user={user} 
+                        token={token}
                         onChanging={() => {
                           setUser(null),
                           setToken(null),
@@ -281,11 +295,11 @@ export const MainView= () => {
               path="/users/settings/delete"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Col>
                       <ProfileDeleteView 
-                        storedUser={storedUser} 
-                        storedToken={storedToken}
+                        user={user} 
+                        token={token}
                         onDelete={() => {
                           setUser(null),
                           setToken(null),

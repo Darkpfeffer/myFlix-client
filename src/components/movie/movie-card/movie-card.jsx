@@ -12,7 +12,7 @@ import { FavoriteButton } from "../favorite-button/favorite-button";
 import "./movie-card.scss";
 
 //export and logic
-export const MovieCard= ({ movieData, storedUser, storedToken }) => {
+export const MovieCard= ({ movieData, user, token, favoriteMovies }) => {
   return (
       <>
       <Row>
@@ -23,9 +23,10 @@ export const MovieCard= ({ movieData, storedUser, storedToken }) => {
       >
           <Col className="text-end">
             <FavoriteButton 
-              storedUser={storedUser} 
-              storedToken={storedToken} 
+              user={user} 
+              token={token} 
               movieData={movieData}
+              favoriteMovies={favoriteMovies}
             />
           </Col>
           <Link to={`/movies/${movieData._id}`} className="movie-card">

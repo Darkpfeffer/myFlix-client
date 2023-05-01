@@ -9,7 +9,7 @@ import {Row, Col, Button} from "react-bootstrap"
 import { FavoriteButton } from "../favorite-button/favorite-button";
 import { MovieCard } from "../movie-card/movie-card";
 
-export const MovieView= ({ storedUser, storedToken, movieData }) => {
+export const MovieView= ({ user, token, movieData, favoriteMovies }) => {
 const { movieId } = useParams();
 
 const Movie = movieData.find((movie) => movie._id === movieId);
@@ -21,9 +21,10 @@ const similarMovies= movieData.filter((m) => Movie.Genre.Name === m.Genre.Name);
       <Row className="mt-3">
         <Col>
           <FavoriteButton 
-            storedUser={storedUser} 
-            storedToken={storedToken} 
+            user={user} 
+            token={token} 
             movieData={Movie}
+            favoriteMovies={favoriteMovies}
           />
         </Col>
         <Col sm={{offset: 10}}>
@@ -71,8 +72,9 @@ const similarMovies= movieData.filter((m) => Movie.Genre.Name === m.Genre.Name);
           <Col xs={12} md={6} lg={4} xl={3} xxl={2} key={similarMovie._id}>
             <MovieCard
               movieData={similarMovie}
-              storedUser={storedUser}
-              storedToken={storedToken}
+              user={user}
+              token={token}
+              favoriteMovies={favoriteMovies}
             />
           </Col>
           )

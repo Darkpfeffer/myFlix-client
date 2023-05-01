@@ -7,7 +7,7 @@ import {Row, Col} from "react-bootstrap";
 //import components
 import { MovieCard } from "../../movie/movie-card/movie-card";
 
-export const ProfileView = ({storedUser, favoriteMovies, storedToken}) => {
+export const ProfileView = ({user, favoriteMovieList, token, favoriteMovies}) => {
     return (
         <>
             <Row className="mt-2">
@@ -22,7 +22,7 @@ export const ProfileView = ({storedUser, favoriteMovies, storedToken}) => {
                     User:
                 </Col>
                 <Col sm={8} md={7}>
-                    {storedUser.Username}
+                    {user.Username}
                 </Col>
             </Row><br className="xs"/>
             <Row>
@@ -30,7 +30,7 @@ export const ProfileView = ({storedUser, favoriteMovies, storedToken}) => {
                     Email:
                 </Col>
                 <Col sm={8} md={7}>
-                    {storedUser.Email}
+                    {user.Email}
                 </Col>
             </Row><br className="xs"/>
             <Row>
@@ -38,7 +38,7 @@ export const ProfileView = ({storedUser, favoriteMovies, storedToken}) => {
                     Birthday:
                 </Col>
                 <Col sm={7} md={6} lg={7}>
-                    {storedUser.Birthday}
+                    {user.Birthday}
                 </Col>
             </Row><br className="xs"/>
             <Row>
@@ -47,9 +47,9 @@ export const ProfileView = ({storedUser, favoriteMovies, storedToken}) => {
                 </Col>
             </Row>
             <Row>
-                {favoriteMovies.map((movie) => (
+                {favoriteMovieList.map((movie) => (
                     <Col xs={12} md={6} lg={4} xl={3} xxl={2} key={movie._id}>
-                        <MovieCard movieData={movie} storedUser={storedUser} storedToken={storedToken}/>
+                        <MovieCard movieData={movie} user={user} token={token} favoriteMovies={favoriteMovies}/>
                     </Col>
                 ))}
             </Row>

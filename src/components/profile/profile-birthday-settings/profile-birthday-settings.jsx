@@ -4,7 +4,7 @@ import { useState } from "react";
 //import react bootstrap
 import {Form, Button, FormGroup, Row, Col} from "react-bootstrap"
 
-export const ProfileBirthdaySettings = ({ storedUser, storedToken, onChanging }) => {
+export const ProfileBirthdaySettings = ({ user, token, onChanging }) => {
 const [birthday, setBirthday] = useState("");
 const [controlBirthday, setControlBirthday] = useState("");
 const [password, setPassword] = useState("");
@@ -15,14 +15,14 @@ const [controlPassword, setControlPassword] = useState("");
 
         const myHeaders= {
             "Content-Type" : "application/JSON",
-            Authorization: `Bearer ${storedToken}`
+            Authorization: `Bearer ${token}`
         }
 
         if (birthday === controlBirthday && password === controlPassword) {
             var data= {
-                Username: storedUser.Username,
+                Username: user.Username,
                 Password: password,
-                Email: storedUser.Email,
+                Email: user.Email,
                 Birthday: birthday
             } 
         } else {
@@ -30,7 +30,7 @@ const [controlPassword, setControlPassword] = useState("");
             return;
         }
     
-        fetch(`https://myflix-5sws.onrender.com/users/${storedUser.Username}`, { 
+        fetch(`https://myflix-5sws.onrender.com/users/${user.Username}`, { 
             method: "PUT",
             headers: new Headers (myHeaders),
                 body: JSON.stringify(data)

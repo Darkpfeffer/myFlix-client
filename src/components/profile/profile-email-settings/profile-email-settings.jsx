@@ -4,7 +4,7 @@ import { useState } from "react";
 //import react bootstrap
 import {Form, Button, FormGroup, Row, Col} from "react-bootstrap"
 
-export const ProfileEmailSettings = ({ storedUser, storedToken, onChanging }) => {
+export const ProfileEmailSettings = ({ user, token, onChanging }) => {
 const [email, setEmail] = useState("");
 const [controlEmail, setControlEmail] = useState("");
 const [password, setPassword] = useState("");
@@ -15,22 +15,22 @@ const [controlPassword, setControlPassword] = useState("");
 
         const myHeaders= {
             "Content-Type" : "application/JSON",
-            Authorization: `Bearer ${storedToken}`
+            Authorization: `Bearer ${token}`
         }
 
         if (email === controlEmail && password === controlPassword) {
             var data= {
-                Username: storedUser.Username,
+                Username: user.Username,
                 Password: password,
                 Email: email,
-                Birthday: storedUser.Birthday
+                Birthday: user.Birthday
             } 
         } else {
             alert ("New email and password is not the same at the two fields!");
             return;
         }
     
-        fetch(`https://myflix-5sws.onrender.com/users/${storedUser.Username}`, { 
+        fetch(`https://myflix-5sws.onrender.com/users/${user.Username}`, { 
             method: "PUT",
             headers: new Headers (myHeaders),
                 body: JSON.stringify(data)
