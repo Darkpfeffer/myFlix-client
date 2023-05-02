@@ -19,6 +19,7 @@ import { ProfileUsernameSettings } from "../profile/profile-username-settings/pr
 import { ProfileEmailSettings } from "../profile/profile-email-settings/profile-email-settings";
 import { ProfileBirthdaySettings } from "../profile/profile-birthday-settings/profile-birthday-settings";
 import { ProfileDeleteView } from "../profile/profile-delete-view/profile-delete-view";
+import { SearchView } from "../search-view/search-view";
 
 export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
@@ -97,16 +98,12 @@ export const MainView= () => {
                   { user && movie.length === 0 ? (
                     <Col>The list is empty!</Col>
                   ) : user ? (
-                    movie.map((Movie) => (
-                      <Col xs={12} md={6} lg={4} xl={3} xxl={2} key={Movie._id}>
-                        <MovieCard 
-                          movieData={Movie} 
-                          user={user}
-                          token={token}
-                          favoriteMovies={favoriteMovie}
-                        />
-                      </Col>
-                    ))
+                    <SearchView
+                      user={user}
+                      token={token}
+                      favoriteMovies={favoriteMovie}
+                      movie={movie}
+                    />
                   ) : (
                     <Navigate to="/login" replace/>
                   )}

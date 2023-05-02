@@ -32,7 +32,7 @@ export const MovieCard= ({ movieData, user, token, favoriteMovies }) => {
           <Link to={`/movies/${movieData._id}`} className="movie-card">
           <Card.Img className="px-3 pt-3" src={movieData.ImageURL}/>
           <Card.Body >
-            <Card.Title className="fw-bold">
+            <Card.Title className="fw-bold cardTitle">
               {movieData.Title} ({movieData.Release_date})              
             </Card.Title>
             <Card.Text 

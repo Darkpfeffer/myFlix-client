@@ -23,6 +23,11 @@ $font-size-base: 0.9rem;
   color: whitesmoke;
 }
 
+//search engine
+.hide {
+  display:none
+}
+
 @media all and (max-width: 575px) {
   .movie_image {
     min-width: 120px;
