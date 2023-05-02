@@ -18,8 +18,9 @@ export const FavoriteButton= ({ user, token, favoriteMovies, movieData}) => {
                 method: "PUT",
                 headers: {Authorization: `Bearer ${token}`}
             }).then((res) => res.json()
-            ).then(() => {
+            ).then((result) => {
                 alert("Movie removed from your favorite list");
+                localStorage.setItem("user", JSON.stringify(result.updatedUser));
                 window.location.reload()
             }).catch((err) => {
                 alert("Something went wrong"+ err);
@@ -29,8 +30,9 @@ export const FavoriteButton= ({ user, token, favoriteMovies, movieData}) => {
                 method: "POST",
                 headers: {Authorization: `Bearer ${token}`}
             }).then((res) => res.json()
-            ).then(() => {
+            ).then((result) => {
                 alert("Movie added to your favorite list");
+                localStorage.setItem("user", JSON.stringify(result));
                 window.location.reload()
             }).catch((err) => {
                 alert("Something went wrong"+ err);

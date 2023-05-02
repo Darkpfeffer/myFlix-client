@@ -28,6 +28,7 @@ export const MainView= () => {
   const [user, setUser]= useState(null);
   const [token, setToken]= useState(null);
 
+
   if(!user && storedUser) {
     setFavoriteMovie(storedUser.FavoriteMovies)
   }
@@ -139,7 +140,7 @@ export const MainView= () => {
               path="/login"
               element={
                 <>
-                  { storedUser ? (
+                  { user ? (
                     <Navigate to="/" replace/>
                   ) : (
                       <Col xs={12}>
