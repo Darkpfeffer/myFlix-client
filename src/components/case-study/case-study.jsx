@@ -252,7 +252,7 @@ export const CaseStudy = () => {
                         className="mb-3 text-center"
                     >
                         <a 
-                            href="https://darkpfeffer-myflix.netlify.app/API-movies-response.9d3f869a.png"
+                            href="https://darkpfeffer-myflix.netlify.app/API-movies-response(fullscreen).768a156d.png"
                             target="_blank"
                         >
                             <Image 
@@ -304,7 +304,7 @@ export const CaseStudy = () => {
                             className="mb-5 mb-sm-3 text-center"
                         >
                             <a 
-                                href="https://darkpfeffer-myflix.netlify.app/API-movies-response.9d3f869a.png"
+                                href="https://darkpfeffer-myflix.netlify.app/API-movies-response(fullscreen).768a156d.png"
                                 target="_blank"
                             >
                                 <Image 
@@ -349,7 +349,7 @@ export const CaseStudy = () => {
                     sm={{offset: 1, span: 10}} 
                     className="mt-3 text-center"
                 >   
-                    <a href="http://localhost:1234/schema.bd2ab4e9.png?1687249179934" target="_blank">
+                    <a href="https://darkpfeffer-myflix.netlify.app/schema.25473030.png" target="_blank">
                         <Image src={Schema} style={{width: "80%"}}/>
                     </a>
                     <br/>
@@ -377,7 +377,7 @@ export const CaseStudy = () => {
                         className="mb-3 text-center"
                     >
                         <a 
-                            href="http://localhost:1234/hashed-password.01e18e8c.png?1687253974065"
+                            href="https://darkpfeffer-myflix.netlify.app/hashed-password.fcaae056.png"
                             target="_blank"
                         >
                             <Image 
@@ -436,7 +436,7 @@ export const CaseStudy = () => {
                             className="mb-5 mb-sm-3 text-center"
                         >
                             <a 
-                            href="http://localhost:1234/hashed-password.01e18e8c.png?1687253974065"
+                            href="https://darkpfeffer-myflix.netlify.app/hashed-password.fcaae056.png"
                             target="_blank"
                         >
                             <Image 
@@ -521,7 +521,7 @@ export const CaseStudy = () => {
                         className="mb-3 text-center"
                     >
                         <a 
-                            href="http://localhost:1234/fetch-example.671b6915.png?1687256410083"
+                            href="https://darkpfeffer-myflix.netlify.app/fetch-example.a0ec9e9e.png"
                             target="_blank"
                         >
                             <Image 
@@ -577,7 +577,7 @@ export const CaseStudy = () => {
                             className="mb-5 mb-sm-3 text-center"
                         >
                             <a 
-                            href="http://localhost:1234/fetch-example.671b6915.png?1687256410083"
+                            href="https://darkpfeffer-myflix.netlify.app/fetch-example.a0ec9e9e.png"
                             target="_blank"
                         >
                             <Image 
@@ -611,7 +611,7 @@ export const CaseStudy = () => {
                     sm={{offset: 1, span: 10}} 
                     className="mt-3 text-center"
                 >   
-                    <a href="http://localhost:1234/favorite-manipulation.22a6c776.png?1687270459769" target="_blank">
+                    <a href="https://darkpfeffer-myflix.netlify.app/favorite-manipulation.fbe8ee06.png" target="_blank">
                         <Image src={FavoriteManipulation} style={{width: "70%"}}/>
                     </a>
                     <br/>
