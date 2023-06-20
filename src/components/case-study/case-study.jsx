@@ -224,7 +224,7 @@ export const CaseStudy = () => {
                     sm={{offset: 1, span: 10}} 
                     className="mt-3 text-center"
                 >   
-                    <a href="http://localhost:1234/movies-endpoint.e2718eac.png?1687191779451" target="_blank">
+                    <a href="https://darkpfeffer-myflix.netlify.app/movies-endpoint.ced65ccf.png" target="_blank">
                         <Image src={MoviesEndpoint} style={{width: "100%"}}/>
                     </a>
                     <br/>
@@ -252,13 +252,13 @@ export const CaseStudy = () => {
                         className="mb-3 text-center"
                     >
                         <a 
-                            href="http://localhost:1234/API-movies-response(fullscreen).f19ea555.png?1687193926809"
+                            href="https://darkpfeffer-myflix.netlify.app/API-movies-response.9d3f869a.png"
                             target="_blank"
                         >
                             <Image 
                                 src={APIResponse} width="80%"
                                 className="h-75"
-                            />
+                            /><span><Image src={APIResponse2} width="0.2%"/></span>
                         </a><br/>
                         Request sent to API to get a list of all movies from the database<br/>
                         (Click on the image to see the full image)
@@ -304,7 +304,7 @@ export const CaseStudy = () => {
                             className="mb-5 mb-sm-3 text-center"
                         >
                             <a 
-                                href="http://localhost:1234/API-movies-response(fullscreen).f19ea555.png?1687193926809"
+                                href="https://darkpfeffer-myflix.netlify.app/API-movies-response.9d3f869a.png"
                                 target="_blank"
                             >
                                 <Image 
