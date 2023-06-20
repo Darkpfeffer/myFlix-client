@@ -458,7 +458,8 @@ export const CaseStudy = () => {
                 <a 
                     href="https://github.com/Darkpfeffer/movie_api/blob/main/package.json"
                 >
-                    https://github.com/Darkpfeffer/movie_api/blob/main/package.json
+                    https://github.com/Darkpfeffer/movie_api/<br className="mobile"/>
+                    blob/main/package.json
                 </a>
             </Col>
         </Row>
