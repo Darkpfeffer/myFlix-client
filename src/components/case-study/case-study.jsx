@@ -79,14 +79,14 @@ export const CaseStudy = () => {
                     xs="12"
                     className="fw-bold fs-1 text-primary text-center"
                 >
-                    Study Case of MyFlix application
+                    Case Study of MyFlix application
                 </Col>
             </Row>
         ) : (
             <>
                 <Row>
                     <Col xs="12" className="fw-bold fs-1 text-primary text-center">
-                        Study Case of
+                        Case Study of
                     </Col>
                 </Row>
                 <Row>
