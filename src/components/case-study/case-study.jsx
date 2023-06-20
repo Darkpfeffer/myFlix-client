@@ -6,15 +6,15 @@ import { useState, useEffect } from "react"
 import { Row, Col, Image, Button, Modal } from "react-bootstrap"
 
 //import images
-import HeroImageMobile from "../case-study/img/Hero-image__mobile.png"
-import HeroImage from "../case-study/img/Hero-image.png"
-import MoviesEndpoint from "../case-study/img/movies-endpoint.png"
-import APIResponse from "../case-study/img/API-movies-response.png"
-import APIResponse2 from "../case-study/img/API-movies-response(fullscreen).png"
-import Schema from "../case-study/img/schema.png"
-import HashedPassword from "../case-study/img/hashed-password.png"
-import FetchExample from "../case-study/img/fetch-example.png"
-import FavoriteManipulation from "../case-study/img/favorite-manipulation.png"
+import HeroImageMobile from "../../img/Hero-image__mobile.png"
+import HeroImage from "../../img/Hero-image.png"
+import MoviesEndpoint from "../../img/movies-endpoint.png"
+import APIResponse from "../../img/API-movies-response.png"
+import APIResponse2 from "../../img/API-movies-response(fullscreen).png"
+import Schema from "../../img/schema.png"
+import HashedPassword from "../../img/hashed-password.png"
+import FetchExample from "../../img/fetch-example.png"
+import FavoriteManipulation from "../../img/favorite-manipulation.png"
 
 export const CaseStudy = () => {
     //function for changing screen sizes
