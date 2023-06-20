@@ -20,6 +20,7 @@ import { ProfileEmailSettings } from "../profile/profile-email-settings/profile-
 import { ProfileBirthdaySettings } from "../profile/profile-birthday-settings/profile-birthday-settings";
 import { ProfileDeleteView } from "../profile/profile-delete-view/profile-delete-view";
 import { SearchView } from "../search-view/search-view";
+import { CaseStudy } from "../case-study/case-study";
 
 export const MainView= () => {
   const storedUser= JSON.parse(localStorage.getItem("user"));
@@ -96,7 +97,9 @@ export const MainView= () => {
               element={
                 <>
                   { user && movie.length === 0 ? (
-                    <Col>The list is empty!</Col>
+                    <Col sm={{offset: 2}} md={{offset: 4}} className="fw-bold fs-5 align-self-center mb-2 mt-4">
+                    The list is empty!
+                    </Col>
                   ) : user ? (
                     <SearchView
                       user={user}
@@ -312,6 +315,14 @@ export const MainView= () => {
                     <Navigate to="/login" replace/>
                   )}
                 </>
+              }
+            />
+            <Route 
+              path="/case-study"
+              element={
+                <Col>
+                  <CaseStudy />
+                </Col>
               }
             />
         </Routes>
