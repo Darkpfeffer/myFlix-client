@@ -97,7 +97,7 @@ export const CaseStudy = () => {
             </>
         )}
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 <span className="text-primary fw-bold">Overview: </span>MyFlix is using MERN stack. MERN is an acronym, 
                 what stands for MongoDB (a non-relational document-oriented database), 
                 Express (a server-side framework), React (a client-side JavaScript 
@@ -106,7 +106,7 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 <span className="text-primary fw-bold">Purpose and Context: </span>The 
                 MyFlix application project is a 
                 one-person project and part of the CareerFoundry full-stack 
@@ -115,7 +115,7 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 <span className="text-primary fw-bold">Objective: </span>Create an app 
                 from scratch where the users are able 
                 to see a list of all the movies that exist in the database of 
@@ -124,57 +124,57 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 <span className="text-primary fw-bold">Duration: </span>3 Months
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 <span className="text-primary fw-bold">Role: </span>Lead Developer
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 <span className="text-primary fw-bold">Tools used:</span>
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - Node.js
             </Col>
         </Row>
         <Row>
-            <Col xs={{offset: 1, span: 10}} className="px-4">
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}} className="px-4">
                 - Framework:
             </Col>
         </Row>
         <Row>
-            <Col xs={{offset: 1, span: 10}} className="px-5">
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}} className="px-5">
                 - Express
             </Col>
         </Row>
         <Row>
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - MongoDB
             </Col>
         </Row>
         <Row>
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - React
             </Col>
         </Row>
         <Row>
-            <Col xs={{offset: 1, span: 10}} className="px-4">
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}} className="px-4">
                 - UI framework:
             </Col>
         </Row>
         <Row>
-            <Col xs={{offset: 1, span: 10}} className="px-5">
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}} className="px-5">
                 - Bootstrap
             </Col>
         </Row>
         <Row className="mt-3 mb-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 Creating both sides came with challenges, like getting the right 
                 response from a specific endpoint, debugging if something 
                 functioned wrong, giving the client-side the information it 
@@ -185,14 +185,22 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col className="fw-bold fs-2 text-primary text-center">
+            <Col 
+                xxl= {{offset: 3, span: 6}}
+                xl= {{offset: 2, span: 8}}
+                lg= {{offset: 1, span: 10}}
+                xs="12"
+                className="fw-bold fs-2 text-primary text-center"
+            >
                 Server-side
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col 
+            <Col
+                xxl={{offset: 3, span: 4}}
+                xl={{offset: 2, span: 4}}
                 lg={{offset:1, span: 4}}
-                xs="12" 
+                xs={{offset: 1, span: 10}}
                 className="text-primary fw-bold fs-4 text-center"
             >
                 Setting up the REST API endpoints
@@ -200,8 +208,9 @@ export const CaseStudy = () => {
         </Row>
         <Row className="mt-3">
             <Col 
-                xxl={{offset: 1, span: 5}} 
-                lg={{offset: 1, span: 4}} 
+                xxl={{offset: 3, span: 4}} 
+                xl={{offset: 2, span: 4}}
+                lg={{offset: 1, span: 4}}
                 xs={{offset: 1, span: 10}}
             >
                 API is the acronym for Application Programming Interface. It is a set 
@@ -219,13 +228,14 @@ export const CaseStudy = () => {
                 to work.
             </Col>
             <Col 
-                    xxl="5" 
-                    lg="6" 
+                    xxl="2" 
+                    xl="4"
+                    lg="5" 
                     sm={{offset: 1, span: 10}} 
                     className="mt-3 text-center"
                 >   
                     <a href="https://darkpfeffer-myflix.netlify.app/movies-endpoint.ced65ccf.png" target="_blank">
-                        <Image src={MoviesEndpoint} style={{width: "100%"}}/>
+                        <Image src={MoviesEndpoint} className="w-100"/>
                     </a>
                     <br/>
                     <br/>
@@ -235,9 +245,10 @@ export const CaseStudy = () => {
         </Row>
         <Row className="mt-5 mb-sm-3 mb-5">
             <Col
-                xxl={{offset: 7, span: 5}}
-                lg={{offset: 8, span: 4}}
-                xs="12"
+                xxl={{offset: 6, span: 4}}
+                xl={{offset: 7, span: 4}}
+                lg={{offset: 7, span: 4}}
+                xs={{offset: 1, span: 10}}
                 className="text-primary fw-bold fs-4 text-center"
             >
                 Create the database and connect it with the API
@@ -247,24 +258,26 @@ export const CaseStudy = () => {
             { !smallImage ? (
                 <>
                     <Col 
-                        xxl={{offset: 1, span: 5}}
-                        lg={{offset: 1, span: 6}}
-                        className="mb-3 text-center"
+                        xxl={{offset: 3, span: 2}}
+                        xl={{offset: 2, span: 4}}
+                        lg={{offset: 1, span: 5}}
+                        className="mb-5 text-center"
                     >
                         <a 
                             href="https://darkpfeffer-myflix.netlify.app/API-movies-response(fullscreen).768a156d.png"
                             target="_blank"
                         >
                             <Image 
-                                src={APIResponse} width="80%"
-                                className="h-75"
+                                src={APIResponse}
+                                className="w-100 h-75"
                             /><span><Image src={APIResponse2} width="0.2%"/></span>
                         </a><br/>
                         Request sent to API to get a list of all movies from the database<br/>
                         (Click on the image to see the full image)
                     </Col>
                     <Col 
-                        xxl={{span: 5}} 
+                        xxl={{span: 4}}
+                        xl={{span: 4}} 
                         lg={{span: 4}} 
                         xs={{offset: 1, span: 10}}
                     >
@@ -283,8 +296,6 @@ export const CaseStudy = () => {
             ) : (
                 <>
                     <Col 
-                        xxl={{span: 5}} 
-                        lg={{span: 4}} 
                         xs={{offset: 1, span: 10}}
                     >
                         The database was created with MongoDB, first locally, later in 
@@ -321,9 +332,10 @@ export const CaseStudy = () => {
         </Row>
         <Row className="mt-3">
             <Col 
-                xxl={{offset:1, span: 4}}
-                lg={{offset:1, span: 5}}
-                xs="12" 
+                xxl={{offset: 3, span: 4}}
+                xl={{offset: 2, span: 4}}
+                lg={{offset:1, span: 4}}
+                xs={{offset: 1, span: 10}} 
                 className="text-primary fw-bold fs-4 text-center"
             >
                 Create schemas for the specific data types
@@ -331,8 +343,9 @@ export const CaseStudy = () => {
         </Row>
         <Row>
             <Col 
-                xxl={{offset: 1, span: 5}} 
-                lg={{offset: 1, span: 4}} 
+                xxl={{offset: 3, span: 4}} 
+                xl={{offset: 2, span: 4}}
+                lg={{offset: 1, span: 4}}
                 xs={{offset: 1, span: 10}}
             >
                 It is an important step, because with creating schemas the 
@@ -344,13 +357,14 @@ export const CaseStudy = () => {
                 challenge at this point.
             </Col>
             <Col 
-                    xxl="5" 
-                    lg="6" 
+                    xxl="2" 
+                    xl="4"
+                    lg="5" 
                     sm={{offset: 1, span: 10}} 
                     className="mt-3 text-center"
                 >   
                     <a href="https://darkpfeffer-myflix.netlify.app/schema.25473030.png" target="_blank">
-                        <Image src={Schema} style={{width: "80%"}}/>
+                        <Image src={Schema} className="w-100"/>
                     </a>
                     <br/>
                     <br/>
@@ -360,9 +374,10 @@ export const CaseStudy = () => {
         </Row>
         <Row className="mt-5 mb-sm-3 mb-5">
             <Col
-                xxl={{offset: 7, span: 5}}
-                lg={{offset: 8, span: 4}}
-                xs="12"
+                xxl={{offset: 6, span: 4}}
+                xl={{offset: 7, span: 4}}
+                lg={{offset: 7, span: 4}}
+                xs={{offset: 1, span: 10}}
                 className="text-primary fw-bold fs-4 text-center"
             >
                 Create the user authentication, authorization and password encryption
@@ -372,8 +387,9 @@ export const CaseStudy = () => {
             { !smallImage ? (
                 <>
                     <Col 
-                        xxl={{offset: 1, span: 5}}
-                        lg={{offset: 1, span: 6}}
+                        xxl={{offset: 3, span: 2}}
+                        xl={{offset: 2, span: 4}}
+                        lg={{offset: 1, span: 5}}
                         className="mb-3 text-center"
                     >
                         <a 
@@ -381,14 +397,15 @@ export const CaseStudy = () => {
                             target="_blank"
                         >
                             <Image 
-                                src={HashedPassword} width="80%"
+                                src={HashedPassword} className="w-100"
                             />
                         </a><br/>
                         Example for hashed password<br/>
                         (Click on the image to see it bigger)
                     </Col>
                     <Col 
-                        xxl={{span: 5}} 
+                        xxl={{span: 4}}
+                        xl={{span: 4}} 
                         lg={{span: 4}} 
                         xs={{offset: 1, span: 10}}
                     >
@@ -411,8 +428,6 @@ export const CaseStudy = () => {
             ) : (
                 <>
                     <Col 
-                        xxl={{span: 5}} 
-                        lg={{span: 4}} 
                         xs={{offset: 1, span: 10}}
                     >
                         It is one of the main foundation part of the application. 
@@ -431,8 +446,7 @@ export const CaseStudy = () => {
                     </Col>
                     <Row className="mt-3">
                         <Col 
-                            xxl={{offset: 1, span: 5}}
-                            lg={{offset: 1, span: 6}}
+                            xs={{offset: 1, span: 10}}
                             className="mb-5 mb-sm-3 text-center"
                         >
                             <a 
@@ -440,7 +454,8 @@ export const CaseStudy = () => {
                             target="_blank"
                         >
                             <Image 
-                                src={HashedPassword} width="80%"
+                                src={HashedPassword}
+                                className="w-100"
                             />
                         </a><br/>
                         Example for hashed password<br/>
@@ -451,10 +466,20 @@ export const CaseStudy = () => {
                 )} 
         </Row>
         <Row className="mt-5">
-            <Col xs={{offset: 1, span: 6}}>
+            <Col 
+                xxl={{offset: 3, span: 6}} 
+                xl={{offset: 2, span: 8}}
+                lg={{offset: 1, span: 10}}
+                xs={{offset: 1, span: 10}}
+            >
                 You can find all the dependencies of the server-side here: 
             </Col>
-            <Col xs={{offset: 1, span: 6}}>
+            <Col 
+                xxl={{offset: 3, span: 6}} 
+                xl={{offset: 2, span: 8}}
+                lg={{offset: 1, span: 10}}
+                xs={{offset: 1, span: 10}}
+            >
                 <a 
                     href="https://github.com/Darkpfeffer/movie_api/blob/main/package.json"
                 >
@@ -464,10 +489,20 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 6}}>
+            <Col 
+                xxl={{offset: 3, span: 6}} 
+                xl={{offset: 2, span: 8}}
+                lg={{offset: 1, span: 10}}
+                xs={{offset: 1, span: 10}}
+            >
                 To know more about the endpoints: 
             </Col>
-            <Col xs={{offset: 1, span: 6}}>
+            <Col 
+                xxl={{offset: 3, span: 6}} 
+                xl={{offset: 2, span: 8}}
+                lg={{offset: 1, span: 10}}
+                xs={{offset: 1, span: 10}}
+            >
                 <a 
                     href="https://myflix-5sws.onrender.com/documentation.html"
                 >
@@ -476,14 +511,22 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col className="fw-bold fs-2 text-primary text-center">
+            <Col 
+                xxl= {{offset: 3, span: 6}}
+                xl= {{offset: 2, span: 8}}
+                lg= {{offset: 1, span: 10}}
+                xs="12"
+                className="fw-bold fs-2 text-primary text-center"
+            >
                 Client-side
             </Col>
         </Row>
         <Row className="mt-5">
         <Col 
-                lg={{offset:1, span: 5}}
-                xs="12" 
+                xxl={{offset: 3, span: 4}}
+                xl={{offset: 2, span: 4}}
+                lg={{offset:1, span: 4}}
+                xs={{offset: 1, span: 10}} 
                 className="text-primary fw-bold fs-4 text-center"
             >
                 Create components for each functionality the application has
@@ -491,8 +534,9 @@ export const CaseStudy = () => {
         </Row>
         <Row className="mt-3">
             <Col 
-                xxl={{offset: 1, span: 6}} 
-                lg={{offset: 1, span: 5}} 
+                xxl={{offset: 3, span: 4}} 
+                xl={{offset: 2, span: 4}}
+                lg={{offset: 1, span: 4}}
                 xs={{offset: 1, span: 10}}
             >
                 It is crucial for a single page application, because the 
@@ -505,9 +549,10 @@ export const CaseStudy = () => {
         </Row>
         <Row className="mt-5 mb-sm-3 mb-5">
             <Col
-                xxl={{offset: 6, span: 6}}
-                lg={{offset: 7, span: 5}}
-                xs="12"
+                xxl={{offset: 6, span: 4}}
+                xl={{offset: 7, span: 4}}
+                lg={{offset: 7, span: 4}}
+                xs={{offset: 1, span: 10}}
                 className="text-primary fw-bold fs-4 text-center"
             >
                 If a component sends data to the database, or needs data from it, the client-side needs to communicate with the REST API
@@ -517,7 +562,8 @@ export const CaseStudy = () => {
             { !smallImage ? (
                 <>
                     <Col 
-                        xxl={{offset: 1, span: 4}}
+                        xxl={{offset: 3, span: 2}}
+                        xl={{offset: 2, span: 4}}
                         lg={{offset: 1, span: 5}}
                         className="mb-3 text-center"
                     >
@@ -534,8 +580,9 @@ export const CaseStudy = () => {
                         (Click on the image to see it bigger)
                     </Col>
                     <Col 
-                        xxl={{span: 6}} 
-                        lg={{span: 5}} 
+                        xxl={{span: 4}}
+                        xl={{span: 4}} 
+                        lg={{span: 4}} 
                         xs={{offset: 1, span: 10}}
                     >
                         Here I had to "fetch" the endpoints I created and use the 
@@ -555,8 +602,6 @@ export const CaseStudy = () => {
             ) : (
                 <>
                     <Col 
-                        xxl={{span: 5}} 
-                        lg={{span: 4}} 
                         xs={{offset: 1, span: 10}}
                     >
                         Here I had to "fetch" the endpoints I created and use the 
@@ -573,8 +618,6 @@ export const CaseStudy = () => {
                     </Col>
                     <Row className="mt-3">
                         <Col 
-                            xxl={{offset: 1, span: 5}}
-                            lg={{offset: 1, span: 6}}
                             className="mb-5 mb-sm-3 text-center"
                         >
                             <a 
@@ -583,7 +626,7 @@ export const CaseStudy = () => {
                         >
                             <Image 
                                 src={FetchExample}
-                                className=" w-75 h-50"
+                                className=" w-75 h-75"
                             />
                         </a><br/>
                         "Fetch" example<br/>
@@ -595,8 +638,9 @@ export const CaseStudy = () => {
         </Row>
         <Row>
             <Col 
-                xxl={{offset: 1, span: 5}} 
-                lg={{offset: 1, span: 4}} 
+                xxl={{offset: 3, span: 4}} 
+                xl={{offset: 2, span: 4}}
+                lg={{offset: 1, span: 4}}
                 xs={{offset: 1, span: 10}}
             >
                 When manipulating the user's favorite list I had to change the 
@@ -607,13 +651,14 @@ export const CaseStudy = () => {
                 the list will be updated as well in the database.
             </Col>
             <Col 
-                    xxl="5" 
-                    lg="6" 
+                    xxl="2" 
+                    xl="4"
+                    lg="5" 
                     sm={{offset: 1, span: 10}} 
                     className="mt-3 text-center"
                 >   
                     <a href="https://darkpfeffer-myflix.netlify.app/favorite-manipulation.fbe8ee06.png" target="_blank">
-                        <Image src={FavoriteManipulation} style={{width: "70%"}}/>
+                        <Image src={FavoriteManipulation} className="w-100"/>
                     </a>
                     <br/>
                     <br/>
@@ -623,9 +668,10 @@ export const CaseStudy = () => {
         </Row>
         <Row className="mt-5 mb-sm-3 mb-5">
             <Col
-                xxl={{offset: 7, span: 5}}
-                lg={{offset: 8, span: 4}}
-                xs="12"
+                xxl={{offset: 6, span: 4}}
+                xl={{offset: 7, span: 4}}
+                lg={{offset: 7, span: 4}}
+                xs={{offset: 1, span: 10}}
                 className="text-primary fw-bold fs-4 text-center"
             >
                 Create client-side endpoints, so users can go back to the 
@@ -634,9 +680,10 @@ export const CaseStudy = () => {
         </Row>
         <Row>
             <Col 
-                xxl={{offset: 7, span: 5}} 
-                lg={{offset: 8, span: 4}} 
-                xs={{offset: 1, span: 10}}
+                xxl={{ offset: 6, span: 4}}
+                xl={{ offset: 7, span: 4}} 
+                lg={{ offset: 7, span: 4}} 
+                xs={{ offset: 1, span: 10}}
             >
                 This way after the user changes a view on the website, it will 
                 get a new URL endpoint, and with the back button pressed, it 
@@ -647,19 +694,24 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-5">
-            <Col className="fw-bold fs-2 text-primary text-center">
+            <Col
+                xxl= {{offset: 3, span: 6}}
+                xl= {{offset: 2, span: 8}}
+                xs= {{offset: 1, span: 10}}
+                className="fw-bold fs-2 text-primary text-center"
+            >
                 Summary and Future Plans
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 I did every required objective on the project in time, and I'm 
                 satisfied with the result. But there are some improvement I'll 
                 plan to implement:
             </Col>
         </Row>
         <Row className="mt-3 ps-5">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - If a user presses the favorite button, at this moment an alert 
                 window pops up, showing that the movie was added/removed 
                 successfully. I will change that only a full or an empty heart 
@@ -668,7 +720,7 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3 ps-5">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - I would change at the user data change, that only one data 
                 should be changed at a time. Like this the user has the option 
                 to change one after another, but they don't have to enter data 
@@ -676,12 +728,12 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3 ps-5">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - The final change is to rewrite the website to React Redux.
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 You can check the final application here: 
                 <span> <a 
                     href="https://darkpfeffer-myflix.netlify.app"
@@ -692,17 +744,17 @@ export const CaseStudy = () => {
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
             Thank you for reading through! I hope you liked it!
             </Col>
         </Row>
         <Row className="mt-3">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 Extra thanks for:
             </Col>
         </Row>
         <Row className="mt-3 mb-5 ps-5">
-            <Col xs={{offset: 1, span: 10}}>
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - CareerFoundry
             </Col>
         </Row>
