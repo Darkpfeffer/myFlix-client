@@ -753,6 +753,16 @@ export const CaseStudy = () => {
                 Extra thanks for:
             </Col>
         </Row>
+        <Row className="mt-3 ps-5">
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
+                - James Gichimu (mentor) <span><a href="https://www.linkedin.com/in/james-gichimu-227ab595/">LinkedIn</a></span>
+            </Col>
+        </Row>
+        <Row className="mt-3 ps-5">
+            <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
+                - Phemia Ampaire (tutor) <span><a href="https://www.linkedin.com/in/phemia/">LinkedIn</a></span>
+            </Col>
+        </Row>
         <Row className="mt-3 mb-5 ps-5">
             <Col xxl={{offset: 3, span: 6}} xl={{offset: 2, span: 8}} xs={{offset: 1, span: 10}}>
                 - CareerFoundry
