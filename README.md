@@ -32,6 +32,8 @@ https://github.com/Darkpfeffer/movie_api
   * Bootstrap
 - Build tool 
   * Parcel
+- Hosting
+  * Netlify
 
 ### Project Dependencies:
 
