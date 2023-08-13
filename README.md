@@ -21,11 +21,17 @@ Users can:
 ### API used
 https://github.com/Darkpfeffer/movie_api
 
-### Used Resources:
+### Tools I used:
 
-Syntaxes used: HTML, SCSS, JSX
-
-Build tool used: Parcel
+- HTML
+- SCSS
+- JavaScript
+  * Framework
+    + React
+- UI Framework
+  * Bootstrap
+- Build tool 
+  * Parcel
 
 ### Project Dependencies:
 
