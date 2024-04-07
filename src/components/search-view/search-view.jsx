@@ -18,7 +18,7 @@ export const SearchView = ({ user, token, favoriteMovies, movie}) => {
 
             child.classList.remove('hide');
 
-            if (!movieTitle.innerText.includes(formSearch.value)) { 
+            if (!movieTitle.innerText.toLowerCase().includes(formSearch.value.toLowerCase())) { 
                 child.classList.add('hide');
             }
         }
@@ -26,15 +26,15 @@ export const SearchView = ({ user, token, favoriteMovies, movie}) => {
     return (
         <>
             <Row>
-                <Form onSubmit={handleSubmit} className="mt-3">
+                <Form onChange={handleSubmit} className="mt-3">
                     <Row>
-                    <Form.Group as={Col} style={{'max-width': '200px'}} sm={{span: 4, offset: 5}} md={{span: 3, offset: 7}} lg={{span: 2, offset: 8}} xxl={{offset: 9}} controlId="formSearch">
-                        <Form.Control 
-                            className="text-bg-dark formInput"
-                            type="text"
-                            placeholder="search movies here"
-                        />
-                    </Form.Group>
+                        <Form.Group as={Col} style={{'max-width': '200px'}} sm={{span: 4, offset: 5}} md={{span: 3, offset: 7}} lg={{span: 2, offset: 8}} xxl={{offset: 9}} controlId="formSearch">
+                            <Form.Control 
+                                className="text-bg-dark formInput"
+                                type="text"
+                                placeholder="search movies here"
+                            />
+                        </Form.Group>
                     <Col>
                         <Button variant="secondary" type="Submit" className="mt-2">Search</Button>
                     </Col>
